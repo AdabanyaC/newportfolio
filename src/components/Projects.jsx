@@ -86,7 +86,7 @@ const Projects = () => {
       projectUrl: "https://travel-website-opal.vercel.app/",
       description:
         "A simple landing page for a hypothetical Travel Agency - this was a capstone project for my 'Learn to build real-world websites' course in 2021. ",
-      technologies: ["HTML5", "CSS3", "Figma"],
+      technologies: ["HTML5", "CSS3", "Figma", "GitHub"],
     },
   ];
 
@@ -107,52 +107,16 @@ const Projects = () => {
             }}
           >
             {/* Horizontal line at the top */}
-            <div
-              className="absolute top-0 -left-5 w-full"
-              style={{
-                height: "4px",
-                width: "44rem",
-                backgroundColor: "black",
-                borderRadius: "8px",
-                boxShadow: "4px 4px 5px rgba(0, 0, 0, 0.4)", // Shadow on horizontal line
-              }}
-            ></div>
+            <div className="absolute top-0 -left-7 lg:-left-5 h-1 w-[21rem] lg:w-[44rem] bg-black rounded-lg my-line-shadow"></div>
 
             {/* Horizontal line at the bottom */}
-            <div
-              className="absolute bottom-0 -left-5 w-full"
-              style={{
-                height: "4px",
-                width: "44rem",
-                backgroundColor: "black",
-                borderRadius: "8px",
-                boxShadow: "4px 4px 5px rgba(0, 0, 0, 0.4)", // Shadow on horizontal line
-              }}
-            ></div>
+            <div className="absolute bottom-0 -left-7 lg:-left-5 h-1 w-[21rem] lg:w-[44rem] bg-black rounded-lg my-line-shadow"></div>
 
             {/* Vertical line on the left */}
-            <div
-              className="absolute -top-5 left-0 h-full"
-              style={{
-                width: "4px",
-                height: "36rem",
-                backgroundColor: "black",
-                borderRadius: "8px",
-                boxShadow: "4px 4px 5px rgba(0, 0, 0, 0.4)", // Shadow on vertical line
-              }}
-            ></div>
+            <div className="absolute -top-5 left-0 w-1 h-[32rem] lg:h-[36rem] bg-black rounded-lg my-line-shadow"></div>
 
             {/* Vertical line on the right */}
-            <div
-              className="absolute -top-5 right-0 h-full"
-              style={{
-                width: "4px",
-                height: "36rem",
-                backgroundColor: "black",
-                borderRadius: "8px",
-                boxShadow: "4px 4px 5px rgba(0, 0, 0, 0.4)", // Shadow on vertical line
-              }}
-            ></div>
+            <div className="absolute -top-5 right-0 w-1 h-[32rem] lg:h-[36rem] bg-black rounded-lg my-line-shadow"></div>
 
             <a
               href={project.projectUrl}

@@ -9,3 +9,7 @@ body {
 .myShadow {
   box-shadow: -9.39054px 9.39054px 28.1716px 10.3296px rgba(128, 128, 128, 0.2);
 }
+
+.my-line-shadow {
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+}

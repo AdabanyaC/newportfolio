@@ -10,79 +10,44 @@ import Bootstrap from "./../assets/tools/bootstrap.png";
 import Contentful from "./../assets/tools/contentful.svg";
 import Strapi from "./../assets/tools/strapi.png";
 
+const tools = [
+  { name: "HTML5", logo: Html5 },
+  { name: "CSS3", logo: Css3 },
+  { name: "JavaScript", logo: Js },
+  { name: "React", logo: ReactLogo },
+  { name: "React Native", logo: ReactLogo }, // Reuse React logo for React Native
+  { name: "Redux", logo: Redux },
+  { name: "Typescript", logo: Typescript },
+  { name: "TailwindCSS", logo: Tailwindcss },
+  { name: "Bootstrap", logo: Bootstrap },
+  { name: "Contentful", logo: Contentful },
+  { name: "Strapi", logo: Strapi },
+];
+
 const LogoSlider = () => {
   return (
-    <div className="bg-black py-16 px-8 flex items-center space-x-16">
+    <div className="bg-black py-16 px-4 md:px-8 flex flex-col md:flex-row items-center">
       {/* Title Section */}
-      <div className="text-white w-1/4 px-8">
-        <h2 className="text-4xl font-bold mb-4 capitalize">
+      <div className="text-white w-full md:w-1/3 px-4 mb-8 md:mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold capitalize text-center md:text-left">
           Tools & Technologies I'm exceptional at
         </h2>
       </div>
 
-      {/* Slider Section */}
-      <div className="overflow-hidden w-3/4">
-        <div className="flex items-center gap-24 animate-slide">
-          {/* HTML5 */}
-          <div className="flex flex-col items-center">
-            <img src={Html5} alt="HTML5 Logo" className="" />
-            <p className="text-gray-50 mt-2">HTML5</p>
+      {/* Static Grid Layout */}
+      <div className="grid grid-cols-4 md:grid-cols-6 gap-8 md:gap-16 w-full">
+        {tools.map((tool, index) => (
+          <div key={index} className="flex flex-col items-center">
+            <img
+              src={tool.logo}
+              alt={`${tool.name} Logo`}
+              className="h-12 sm:h-16 md:h-24 object-contain"
+            />
+            <p className="text-gray-50 mt-2 text-xs sm:text-sm md:text-base">
+              {tool.name}
+            </p>
           </div>
-
-          {/* CSS3 */}
-          <div className="flex flex-col items-center">
-            <img src={Css3} alt="CSS3 Logo" className="" />
-            <p className="text-gray-50 mt-2">CSS3</p>
-          </div>
-
-          {/* JavaScript */}
-          <div className="flex flex-col items-center">
-            <img src={Js} alt="JavaScript Logo" className="" />
-            <p className="text-gray-50 mt-2">JavaScript</p>
-          </div>
-
-          {/* React */}
-          <div className="flex flex-col items-center">
-            <img src={ReactLogo} alt="React Logo" className="" />
-            <p className="text-gray-50 mt-2">React</p>
-          </div>
-
-          {/* React Native */}
-          <div className="flex flex-col items-center">
-            <img src={ReactLogo} alt="React Native Logo" className="" />
-            <p className="text-gray-50 mt-2">React Native</p>
-          </div>
-
-          {/* Redux */}
-          <div className="flex flex-col items-center">
-            <img src={Redux} alt="Redux Logo" className="" />
-            <p className="text-gray-50 mt-2">Redux</p>
-          </div>
-
-          {/* Typescript */}
-          <div className="flex flex-col items-center">
-            <img src={Typescript} alt="Typescript Logo" className="" />
-            <p className="text-gray-50 mt-2">Typescript</p>
-          </div>
-
-          {/* TailwindCSS */}
-          <div className="flex flex-col items-center">
-            <img src={Tailwindcss} alt="Tailwind CSS Logo" className="" />
-            <p className="text-gray-50 mt-2">TailwindCSS</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={Bootstrap} alt="Tailwind CSS Logo" className="" />
-            <p className="text-gray-50 mt-2">Bootstrap</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={Contentful} alt="Tailwind CSS Logo" className="" />
-            <p className="text-gray-50 mt-2">Contentful</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={Strapi} alt="Tailwind CSS Logo" className="" />
-            {/* <p className="text-gray-50 mt-2">Strapi</p> */}
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -97,10 +97,10 @@ const Experience = () => {
   };
 
   return (
-    <div className="flex bg-cream-light px-24 pt-24">
+    <div className="flex flex-col md:flex-row bg-cream-light px-6 md:px-24 pt-12 md:pt-24 space-y-8 md:space-y-0">
       {/* Left section - About Me */}
-      <div className="w-1/2 p-8 sticky top-0 h-screen">
-        <h2 className="text-3xl font-bold mb-4">About Me</h2>
+      <div className="w-full md:w-1/2 p-4 md:p-8 md:sticky md:top-0">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">About Me</h2>
         <p>
           With 6 years of experience specializing in web and mobile frontend
           development, I am confident that my skills and achievements in
@@ -116,8 +116,8 @@ const Experience = () => {
       </div>
 
       {/* Right section - Experience */}
-      <div className="w-1/2 p-8 space-y-8">
-        <h2 className="text-3xl font-bold mb-6">Work Experience</h2>
+      <div className="w-full md:w-1/2 p-4 md:p-8 space-y-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Work Experience</h2>
 
         {/* Loop through experiences array */}
         {experiences.map((experience, index) => (
@@ -126,17 +126,19 @@ const Experience = () => {
             href={experience.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-6 py-8  hover:border-black  hover:rounded-2xl hover:shadow-md hover:bg-white hover:bg-opacity-30 hover:border-opacity-50 transition-all duration-300"
+            className="block px-4 py-6 md:px-6 md:py-8 hover:border-black hover:rounded-2xl hover:shadow-md hover:bg-white hover:bg-opacity-30 hover:border-opacity-50 transition-all duration-300"
           >
             <div className="space-y-4">
               <div>
-                <p className="text-xl font-semibold">
+                <p className="text-lg md:text-xl font-semibold">
                   {experience.title} -{" "}
                   <span className="underline">{experience.company}</span>
                 </p>
-                <p className="text-sm text-gray-600">{experience.date}</p>
+                <p className="text-sm md:text-sm text-gray-600">
+                  {experience.date}
+                </p>
               </div>
-              <ul className="list-disc ml-4">
+              <ul className="list-disc ml-4 text-sm md:text-base">
                 {experience.responsibilities.map((responsibility, idx) => (
                   <li key={idx}>{responsibility}</li>
                 ))}
@@ -146,7 +148,7 @@ const Experience = () => {
                 {experience.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-4 py-1 bg-blue-100 text-black border border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200"
+                    className="px-3 py-1 md:px-4 md:py-1 bg-blue-100 text-black border border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200"
                   >
                     {tech}
                   </span>
@@ -159,7 +161,7 @@ const Experience = () => {
         {/* Button to view full resume */}
         <button
           onClick={handleResumeClick}
-          className="flex items-center text-black font-bold text-xl mt-8"
+          className="flex items-center text-black font-bold text-lg md:text-xl mt-8"
         >
           View Full Résumé
           <div className="ml-2 -rotate-45">
