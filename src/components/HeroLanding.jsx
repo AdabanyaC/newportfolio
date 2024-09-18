@@ -9,10 +9,6 @@ const HeroLanding = () => {
     <section className="bg-cream-light h-screen py-8 px-4 flex flex-col items-center justify-between lg:flex-row lg:py-16">
       {/* Left section with heading and text */}
       <div className="flex flex-col w-full lg:w-1/2 lg:px-16 px-4 text-center lg:text-left">
-        {/* Intro Text */}
-        <p className="text-lg sm:text-xl text-gray-600 mb-4 sm:mb-6">
-          Hi, my name is
-        </p>
         {/* Main Heading */}
         <h1 className="text-3xl sm:text-5xl font-bold text-black">
           Clinton Adabanya.

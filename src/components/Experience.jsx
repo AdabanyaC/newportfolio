@@ -99,19 +99,25 @@ const Experience = () => {
   return (
     <div className="flex flex-col md:flex-row bg-cream-light px-6 md:px-24 pt-12 md:pt-24 space-y-8 md:space-y-0">
       {/* Left section - About Me */}
-      <div className="w-full md:w-1/2 p-4 md:p-8 md:sticky md:top-0">
+      <div className="w-full md:w-1/2 p-4 md:p-8 md:sticky md:top-0 h-screen">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">About Me</h2>
-        <p>
-          With 6 years of experience specializing in web and mobile frontend
-          development, I am confident that my skills and achievements in
-          creating responsive, user-friendly applications using modern
-          technologies such as ReactJS, React Native, Redux, and TailwindCSS
-          align perfectly with the needs of your team.
+        <p className="text-xl italic">
+          My journey into tech began on September 21st, 2016, when I wrote my
+          first "Hello World" as an undergraduate at Covenant University,
+          studying Computer Science.
         </p>
         <p className="mt-4">
-          I have successfully delivered several projects that demonstrate my
-          ability to build scalable, dynamic user interfaces while collaborating
-          with UI/UX designers, backend engineers, and product managers.
+          Since then, I’ve built and deployed web applications across industries
+          like FinTech, Sports, Manufacturing, and Agriculture, collaborating
+          with teams to bring impactful digital solutions to life. Whether it’s
+          crafting responsive user interfaces, integrating complex APIs, or
+          ensuring smooth user experiences, I thrive on the challenge of turning
+          ideas, prototypes or designs into functional, elegant applications.
+        </p>
+        <p className="mt-4">
+          When I’m not on my computer writing code, you can find me enjoying a
+          game of football, playing FIFA, listening to music, or reading books
+          on theology.
         </p>
       </div>
 
@@ -134,7 +140,7 @@ const Experience = () => {
                   {experience.title} -{" "}
                   <span className="underline">{experience.company}</span>
                 </p>
-                <p className="text-sm md:text-sm text-gray-600">
+                <p className="text-xs md:text-sm text-gray-600">
                   {experience.date}
                 </p>
               </div>
