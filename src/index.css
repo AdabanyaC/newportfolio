@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Jost", sans-serif;
+}
+
+.myShadow {
+  box-shadow: -9.39054px 9.39054px 28.1716px 10.3296px rgba(128, 128, 128, 0.2);
+}
