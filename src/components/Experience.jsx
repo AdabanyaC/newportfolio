@@ -173,6 +173,7 @@ const Experience = () => {
     <div className="flex flex-col md:flex-row bg-cream-light px-6 md:px-24 pt-12 md:pt-24 space-y-8 md:space-y-0">
       {/* Left section - About Me */}
       <motion.div
+        id="about"
         className="w-full md:w-1/2 p-4 md:p-8 md:sticky md:top-0 h-screen"
         initial="hidden"
         whileInView="visible"
@@ -197,7 +198,7 @@ const Experience = () => {
       </motion.div>
 
       {/* Right section - Experience */}
-      <div className="w-full md:w-1/2 p-4 md:p-8 space-y-8">
+      <div id="experience" className="w-full md:w-1/2 p-4 md:p-8 space-y-8">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">Work Experience</h2>
 
         {/* Loop through experiences array */}

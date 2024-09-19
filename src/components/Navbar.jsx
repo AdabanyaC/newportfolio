@@ -24,7 +24,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className={isMenuOpen ? "overflow-hidden" : ""}>
+    <div id="home" className={isMenuOpen ? "overflow-hidden" : ""}>
       <nav className="bg-cream-light flex justify-center py-4 border-b-2 border-black relative overflow-hidden">
         <div className="absolute -bottom-12 left-5 h-16 w-16 transform -translate-x-1/2 -translate-y-1/2">
           <motion.img
@@ -56,7 +56,9 @@ const Navbar = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <span className="text-2xl font-bold">✦</span>
-            <span className="font-semibold">Clinton Adabanya //</span>
+            <span className="font-semibold text-lg">
+              <a href="#home">Clinton Adabanya</a>
+            </span>
           </motion.div>
 
           {/* Hamburger Icon */}
@@ -85,10 +87,10 @@ const Navbar = () => {
             <a href="#experience" className="font-medium">
               Experience
             </a>
-            <a href="#portfolio" className="font-medium">
+            <a href="#projects" className="font-medium">
               Projects
             </a>
-            <a href="#articles" className="font-medium">
+            <a href="#blog" className="font-medium">
               Blog
             </a>
             <a href="#contact" className="font-medium">
@@ -123,17 +125,13 @@ const Navbar = () => {
                     Experience
                   </a>
                   <a
-                    href="#portfolio"
+                    href="#projects"
                     className="font-medium"
                     onClick={toggleMenu}
                   >
                     Projects
                   </a>
-                  <a
-                    href="#articles"
-                    className="font-medium"
-                    onClick={toggleMenu}
-                  >
+                  <a href="#blog" className="font-medium" onClick={toggleMenu}>
                     Blog
                   </a>
                   <a

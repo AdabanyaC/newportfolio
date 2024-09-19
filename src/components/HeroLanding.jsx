@@ -4,6 +4,7 @@ import IdeaBox from "./../assets/IdeaBox.svg";
 import Amoeba3 from "./../assets/amoeba3.svg";
 import Clinton from "./../assets/clinton.jpg";
 import Arrow7 from "./../assets/Arrow7.svg";
+import { BrifecaseTick } from "iconsax-react";
 
 const HeroLanding = () => {
   return (
@@ -26,11 +27,17 @@ const HeroLanding = () => {
           applications.
         </p>
         <motion.button
-          className="w-36 sm:w-40 mt-4 px-6 py-3 bg-blue-100 text-black border-2 border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200 mx-auto lg:mx-0"
+          className="w-48 sm:w-48 mt-4 px-6 py-3 bg-blue-100 text-black border-2 border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200 mx-auto lg:mx-0"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-          See Portfolio
+          <a
+            href="#projects"
+            className="flex justify-center items-center m-auto gap-2"
+          >
+            See My Projects
+            <BrifecaseTick size={20} />
+          </a>
         </motion.button>
       </motion.div>
 

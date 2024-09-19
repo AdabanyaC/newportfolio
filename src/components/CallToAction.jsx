@@ -16,6 +16,7 @@ const CallToAction = () => {
 
   return (
     <motion.div
+      id="blog"
       className="px-12 py-16 bg-cream-light"
       variants={staggerContainer}
       initial="hidden"

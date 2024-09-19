@@ -5,6 +5,7 @@ import Github from "./../assets/icons/github.png";
 import Linkedin from "./../assets/icons/linkedin.png";
 import Twitter from "./../assets/icons/twitter.png";
 import Wellfound from "./../assets/icons/wellfound.png";
+import { MessageText1 } from "iconsax-react";
 
 // Define animation variants for smooth transitions
 const fadeInUp = {
@@ -24,6 +25,7 @@ const staggerContainer = {
 const Footer = () => {
   return (
     <motion.footer
+      id="contact"
       className="bg-cream-light py-24 px-6"
       variants={staggerContainer}
       initial="hidden"
@@ -45,17 +47,20 @@ const Footer = () => {
             for your project.
           </p>
           <motion.button
-            className="w-40 mt-4 px-6 py-3 bg-blue-100 text-black border-2 border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200 flex justify-center items-center m-auto gap-2"
+            className="w-44 mt-4 py-3 bg-blue-100 text-black border-2 border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200 "
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Contact Me
-            <span role="img" aria-label="envelope">
-              ✉️
-            </span>{" "}
-            {/* Email icon using emoji */}
+            <a
+              href="mailto:clintonadabanya@gmail.com"
+              className="flex justify-center items-center m-auto gap-2"
+            >
+              Contact Me
+              <MessageText1 size={24} />
+              {/* Email icon using emoji */}
+            </a>
           </motion.button>
         </motion.div>
 
@@ -118,8 +123,11 @@ const Footer = () => {
             <a href="#about" className="hover:text-gray-800 transition-colors">
               About
             </a>
-            <a href="#work" className="hover:text-gray-800 transition-colors">
-              Work
+            <a
+              href="#experience"
+              className="hover:text-gray-800 transition-colors"
+            >
+              Experience
             </a>
             <a
               href="#projects"

@@ -132,6 +132,7 @@ const Projects = () => {
 
   return (
     <motion.div
+      id="projects"
       className="bg-cream-light px-12 py-16"
       variants={staggerContainer}
       initial="hidden"
