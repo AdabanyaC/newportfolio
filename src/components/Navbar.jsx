@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { HambergerMenu, CloseCircle } from "iconsax-react"; // Ensure you have iconsax-react installed
 import Amoeba from "./../assets/amoeba.svg";
 import Amoeba2 from "./../assets/amoeba2.svg";
@@ -10,7 +11,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // UseEffect to disable/enable scrolling
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -18,7 +18,6 @@ const Navbar = () => {
       document.body.style.overflow = "auto";
     }
 
-    // Clean up when component unmounts or menu state changes
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -27,23 +26,40 @@ const Navbar = () => {
   return (
     <div className={isMenuOpen ? "overflow-hidden" : ""}>
       <nav className="bg-cream-light flex justify-center py-4 border-b-2 border-black relative overflow-hidden">
-        {/* Surrounding pink accents */}
         <div className="absolute -bottom-12 left-5 h-16 w-16 transform -translate-x-1/2 -translate-y-1/2">
-          <img src={Amoeba2} alt="amoeba image" className="w-full h-full" />
+          <motion.img
+            src={Amoeba2}
+            alt="amoeba image"
+            className="w-full h-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          />
         </div>
         <div className="absolute -top-8 right-5 h-16 w-16 transform translate-x-1/2 translate-y-1/2">
-          <img src={Amoeba} alt="amoeba image" className="w-full h-full" />
+          <motion.img
+            src={Amoeba}
+            alt="amoeba image"
+            className="w-full h-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          />
         </div>
 
-        {/* Main nav bar */}
         <div className="flex items-center justify-between w-full max-w-7xl px-8 py-4 relative">
           {/* Logo */}
-          <div className="flex items-center space-x-2 z-10">
+          <motion.div
+            className="flex items-center space-x-2 z-10"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <span className="text-2xl font-bold">✦</span>
             <span className="font-semibold">Clinton Adabanya //</span>
-          </div>
+          </motion.div>
 
-          {/* Hamburger Icon for Mobile */}
+          {/* Hamburger Icon */}
           <div className="md:hidden z-50" onClick={toggleMenu}>
             {isMenuOpen ? (
               <CloseCircle
@@ -57,7 +73,12 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex space-x-8 z-10">
+          <motion.div
+            className="hidden md:flex space-x-8 z-10"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <a href="#about" className="font-medium">
               About
             </a>
@@ -73,14 +94,23 @@ const Navbar = () => {
             <a href="#contact" className="font-medium">
               Contact
             </a>
-          </div>
+          </motion.div>
 
           {/* Mobile Nav Menu */}
           {isMenuOpen && (
             <>
-              {/* Apply the blur effect to the main content */}
-              <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-md z-20" />
-              <div className="fixed inset-0 top-16 bg-white h-fit py-6 z-20 rounded-lg mx-8 mt-4">
+              <motion.div
+                className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-md z-20"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div
+                className="fixed inset-0 top-16 bg-white h-fit py-6 z-20 rounded-lg mx-8 mt-4"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+              >
                 <div className="flex flex-col items-center space-y-6">
                   <a href="#about" className="font-medium" onClick={toggleMenu}>
                     About
@@ -114,7 +144,7 @@ const Navbar = () => {
                     Contact
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </>
           )}
         </div>

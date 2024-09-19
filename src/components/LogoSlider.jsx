@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import motion for animations
 import Html5 from "./../assets/tools/html-5.png";
 import Css3 from "./../assets/tools/css-3.png";
 import Js from "./../assets/tools/js.png";
@@ -24,6 +25,21 @@ const tools = [
   { name: "Strapi", logo: Strapi },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Delay between animations of each child
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const LogoSlider = () => {
   return (
     <div className="bg-black py-16 px-4 md:px-8 flex flex-col md:flex-row items-center">
@@ -34,10 +50,20 @@ const LogoSlider = () => {
         </h2>
       </div>
 
-      {/* Static Grid Layout */}
-      <div className="grid grid-cols-4 md:grid-cols-6 gap-8 md:gap-16 w-full">
+      {/* Animated Grid Layout */}
+      <motion.div
+        className="grid grid-cols-4 md:grid-cols-6 gap-8 md:gap-16 w-full"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible" // Trigger animation when in view
+        viewport={{ once: true, amount: 0.3 }} // The section will animate when 30% is in view, once
+      >
         {tools.map((tool, index) => (
-          <div key={index} className="flex flex-col items-center">
+          <motion.div
+            key={index}
+            className="flex flex-col items-center"
+            variants={itemVariants} // Apply animation to each logo
+          >
             <img
               src={tool.logo}
               alt={`${tool.name} Logo`}
@@ -46,9 +72,9 @@ const LogoSlider = () => {
             <p className="text-gray-50 mt-2 text-xs sm:text-sm md:text-base">
               {tool.name}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

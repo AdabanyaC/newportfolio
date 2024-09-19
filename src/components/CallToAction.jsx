@@ -1,5 +1,7 @@
 import React from "react";
-import { ArrowRight } from "iconsax-react"; // Ensure ArrowRight icon is already installed
+import { motion } from "framer-motion";
+import { ArrowRight } from "iconsax-react";
+import { staggerContainer } from "./../utils/motion";
 
 const CallToAction = () => {
   const blogPost = {
@@ -13,23 +15,39 @@ const CallToAction = () => {
   };
 
   return (
-    <div className="px-12 py-16 bg-cream-light">
+    <motion.div
+      className="px-12 py-16 bg-cream-light"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+    >
       {/* Section Title */}
       <h2 className="text-4xl font-semibold mb-12">Read My Blog Posts</h2>
 
       {/* Blog Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <a
+        <motion.a
           href={blogPost.postUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="block bg-white border-2 border-black rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           <div className="w-full overflow-hidden">
-            <img
+            <motion.img
               src={blogPost.imageUrl}
               alt={blogPost.title}
               className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300"
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
             />
           </div>
 
@@ -40,13 +58,19 @@ const CallToAction = () => {
             </p>
 
             {/* Styled Arrow Icon */}
-            <div className="absolute bottom-6 right-6 flex items-center justify-center bg-black p-3 rounded-full shadow-lg transition-transform duration-300 transform group-hover:translate-x-2">
+            <motion.div
+              className="absolute bottom-6 right-6 flex items-center justify-center bg-black p-3 rounded-full shadow-lg transition-transform duration-300 transform group-hover:translate-x-2"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+            >
               <ArrowRight size="24" className="text-white -rotate-45" />
-            </div>
+            </motion.div>
           </div>
-        </a>
+        </motion.a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

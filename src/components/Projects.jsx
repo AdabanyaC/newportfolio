@@ -1,5 +1,45 @@
 import React from "react";
-import { ArrowRight } from "iconsax-react"; // Import the icon from iconsax-react
+import { motion } from "framer-motion";
+import { ArrowRight } from "iconsax-react";
+import { staggerContainer } from "./../utils/motion";
+
+// Animation Variants
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeInOut", delay: index * 0.4 },
+  }),
+};
+
+const techContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1, // Delay each child animation for smooth stagger effect
+    },
+  },
+};
+
+const techItemVariants = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.3, type: "spring", bounce: 0.4 },
+  },
+};
+
+const imageVariants = {
+  hidden: { scale: 0.9 },
+  visible: { scale: 1, transition: { duration: 0.5 } },
+};
+
+const projectTitleVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+};
 
 const Projects = () => {
   const projects = [
@@ -91,31 +131,42 @@ const Projects = () => {
   ];
 
   return (
-    <div className="bg-cream-light px-12 py-16">
-      <h2 className="text-4xl font-bold mb-12">My Projects</h2>
+    <motion.div
+      className="bg-cream-light px-12 py-16"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+    >
+      <motion.h2
+        className="text-4xl font-bold mb-12"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+      >
+        My Projects
+      </motion.h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-24">
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             className="relative p-4 bg-white transition-shadow duration-300"
             style={{
               position: "relative",
               boxShadow:
-                "0px 4px 10px rgba(0, 0, 0, 0.1), inset 0px 0px 15px 2px rgba(0, 0, 0, 0.2)", // Unique card shadow
-              borderRadius: "8px", // Rounded corners on the card itself
+                "0px 4px 10px rgba(0, 0, 0, 0.1), inset 0px 0px 15px 2px rgba(0, 0, 0, 0.2)",
+              borderRadius: "8px",
             }}
+            custom={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Horizontal line at the top */}
+            {/* Horizontal & Vertical lines for visual effect */}
             <div className="absolute top-0 -left-7 lg:-left-5 h-1 w-[21rem] lg:w-[44rem] bg-black rounded-lg my-line-shadow"></div>
-
-            {/* Horizontal line at the bottom */}
             <div className="absolute bottom-0 -left-7 lg:-left-5 h-1 w-[21rem] lg:w-[44rem] bg-black rounded-lg my-line-shadow"></div>
-
-            {/* Vertical line on the left */}
             <div className="absolute -top-5 left-0 w-1 h-[32rem] lg:h-[36rem] bg-black rounded-lg my-line-shadow"></div>
-
-            {/* Vertical line on the right */}
             <div className="absolute -top-5 right-0 w-1 h-[32rem] lg:h-[36rem] bg-black rounded-lg my-line-shadow"></div>
 
             <a
@@ -124,40 +175,57 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="group block"
             >
-              <div className="w-full overflow-hidden">
-                <img
+              <motion.div className="w-full overflow-hidden">
+                <motion.img
                   src={project.imageUrl}
                   alt={project.title}
                   className="w-full h-full rounded-lg object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  variants={imageVariants}
                 />
-              </div>
+              </motion.div>
 
-              <div className="mt-4 px-4 py-2">
+              <motion.div
+                className="mt-4 px-4 py-2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={projectTitleVariants}
+              >
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
                 <p className="text-sm text-gray-600 w-4/5">
                   {project.description}
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="flex flex-wrap gap-2 mt-2 px-4">
+              <motion.div
+                className="flex flex-wrap gap-2 mt-2 px-4"
+                variants={techContainerVariants}
+              >
                 {project.technologies.map((tech, idx) => (
-                  <span
+                  <motion.span
                     key={idx}
                     className="px-4 py-1 text-xs bg-blue-100 text-black border border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200"
+                    variants={techItemVariants}
                   >
                     {tech}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
+              </motion.div>
 
-              <div className="absolute bottom-6 right-6 flex items-center justify-center bg-black p-3 rounded-full shadow-lg transition-transform duration-300 transform group-hover:translate-x-2">
+              <motion.div
+                className="absolute bottom-6 right-6 flex items-center justify-center bg-black p-3 rounded-full shadow-lg transition-transform duration-300 transform group-hover:translate-x-2"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5 }}
+              >
                 <ArrowRight size="24" className="text-white -rotate-45" />
-              </div>
+              </motion.div>
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
