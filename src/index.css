@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default Font Family */
+@font-face {
+  font-family: "acorn";
+  src: url(./assets/fonts/acorn.woff) format("woff");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "acorn";
+}
+
 body {
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .myShadow {

@@ -1,15 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { HambergerMenu, CloseCircle } from "iconsax-react"; // Ensure you have iconsax-react installed
-import Amoeba from "./../assets/amoeba.svg";
-import Amoeba2 from "./../assets/amoeba2.svg";
+import { HambergerMenu, CloseCircle } from "iconsax-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -25,42 +39,14 @@ const Navbar = () => {
 
   return (
     <div id="home" className={isMenuOpen ? "overflow-hidden" : ""}>
-      <nav className="bg-cream-light flex justify-center py-4 border-b-2 border-black relative overflow-hidden">
-        <div className="absolute -bottom-12 left-5 h-16 w-16 transform -translate-x-1/2 -translate-y-1/2">
-          <motion.img
-            src={Amoeba2}
-            alt="amoeba image"
-            className="w-full h-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          />
-        </div>
-        <div className="absolute -top-8 right-5 h-16 w-16 transform translate-x-1/2 translate-y-1/2">
-          <motion.img
-            src={Amoeba}
-            alt="amoeba image"
-            className="w-full h-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          />
-        </div>
-
-        <div className="flex items-center justify-between w-full max-w-7xl px-8 py-4 relative">
-          {/* Logo */}
-          <motion.div
-            className="flex items-center space-x-2 z-10"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <span className="text-2xl font-bold">✦</span>
-            <span className="font-semibold text-lg">
-              <a href="#home">Clinton Adabanya</a>
-            </span>
-          </motion.div>
-
+      <nav
+        className={`${
+          isScrolled
+            ? "bg-white bg-opacity-30 backdrop-blur-md shadow-lg"
+            : "bg-cream-light"
+        } fixed top-0 w-full z-50 transition-all duration-300`}
+      >
+        <div className="flex items-center justify-end md:justify-center w-full p-8 relative">
           {/* Hamburger Icon */}
           <div className="md:hidden z-50" onClick={toggleMenu}>
             {isMenuOpen ? (
@@ -81,19 +67,19 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <a href="#about" className="font-medium">
+            <a href="#about" className="font-medium text-wow-gray">
               About
             </a>
-            <a href="#experience" className="font-medium">
+            <a href="#experience" className="font-medium text-wow-gray">
               Experience
             </a>
-            <a href="#projects" className="font-medium">
+            <a href="#projects" className="font-medium text-wow-gray">
               Projects
             </a>
-            <a href="#blog" className="font-medium">
+            <a href="#blog" className="font-medium text-wow-gray">
               Blog
             </a>
-            <a href="#contact" className="font-medium">
+            <a href="#contact" className="font-medium text-wow-gray">
               Contact
             </a>
           </motion.div>
@@ -114,29 +100,37 @@ const Navbar = () => {
                 transition={{ duration: 0.4 }}
               >
                 <div className="flex flex-col items-center space-y-6">
-                  <a href="#about" className="font-medium" onClick={toggleMenu}>
+                  <a
+                    href="#about"
+                    className="font-medium text-wow-gray"
+                    onClick={toggleMenu}
+                  >
                     About
                   </a>
                   <a
                     href="#experience"
-                    className="font-medium"
+                    className="font-medium text-wow-gray"
                     onClick={toggleMenu}
                   >
                     Experience
                   </a>
                   <a
                     href="#projects"
-                    className="font-medium"
+                    className="font-medium text-wow-gray"
                     onClick={toggleMenu}
                   >
                     Projects
                   </a>
-                  <a href="#blog" className="font-medium" onClick={toggleMenu}>
+                  <a
+                    href="#blog"
+                    className="font-medium text-wow-gray"
+                    onClick={toggleMenu}
+                  >
                     Blog
                   </a>
                   <a
                     href="#contact"
-                    className="font-medium"
+                    className="font-medium text-wow-gray"
                     onClick={toggleMenu}
                   >
                     Contact

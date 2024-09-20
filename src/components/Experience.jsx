@@ -41,6 +41,27 @@ const experiences = [
     url: "https://youtu.be/EovJngWt78k",
   },
   {
+    title: "Frontend Engineer, Contract",
+    company: "Emergent Labs",
+    date: "February 2022 - April 2022",
+    responsibilities: [
+      "Collaborated with the engineering team to create an e-commerce application for Lamberet, increasing website conversions by over 50%",
+      "Improved internal software for managing products, storage, and sales, boosting factory production by 30%.",
+      "Resolved bugs to enhance stability and efficiency of current software",
+    ],
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "ReactJS",
+      "GitHub",
+      "TinyLabs",
+      "Jira",
+      "VueJS",
+    ],
+    url: "https://emergentlabsng.com/",
+  },
+  {
     title: "Software Programmer",
     company: "Boulos Enterprises Limited",
     date: "May 2021 - May 2022",
