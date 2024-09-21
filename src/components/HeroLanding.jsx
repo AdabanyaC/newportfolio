@@ -10,7 +10,7 @@ const HeroLanding = () => {
   return (
     <>
       {/* Mobile View */}
-      <section className="md:hidden bg-cream-light py-4 px-4 flex space-y-24 flex-col items-center justify-between">
+      <section className="md:hidden bg-cream-light py-4 flex space-y-24 flex-col items-center justify-between">
         {/* Left section with heading and text */}
         <motion.div
           className="flex flex-col w-full text-center mt-24"

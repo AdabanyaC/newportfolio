@@ -50,7 +50,7 @@ const Projects = () => {
         "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662609/Screenshot_479.png",
       projectUrl: "https://footballoclock.com",
       description:
-        "I integrated a Contentful backend to manage live football scores, news, and updates. The platform attracted over 1,500 page views in just 30 days.",
+        "I integrated a Contentful API to manage live football scores, news, and updates. The platform attracted over 1,500 page views in  30 days.",
       technologies: [
         "React",
         "TailwindCSS",
@@ -127,7 +127,7 @@ const Projects = () => {
   return (
     <motion.div
       id="projects"
-      className="bg-cream-light px-16 py-16"
+      className="bg-cream-light px-4 md:px-16 py-16"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
@@ -141,29 +141,17 @@ const Projects = () => {
         My Projects
       </motion.h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="relative p-4 bg-white transition-shadow duration-300"
-            style={{
-              position: "relative",
-              boxShadow:
-                "0px 4px 10px rgba(0, 0, 0, 0.1), inset 0px 0px 15px 2px rgba(0, 0, 0, 0.2)",
-              borderRadius: "8px",
-            }}
+            className="relative block bg-[hsla(0,0%,100%,0.5)] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
             custom={index}
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Horizontal & Vertical lines for visual effect */}
-            <div className="absolute top-0 -left-7 lg:-left-5 h-1 w-[21rem] lg:w-[44rem] bg-black rounded-lg my-line-shadow"></div>
-            <div className="absolute bottom-0 -left-7 lg:-left-5 h-1 w-[21rem] lg:w-[44rem] bg-black rounded-lg my-line-shadow"></div>
-            <div className="absolute -top-5 left-0 w-1 h-[32rem] lg:h-[36rem] bg-black rounded-lg my-line-shadow"></div>
-            <div className="absolute -top-5 right-0 w-1 h-[32rem] lg:h-[36rem] bg-black rounded-lg my-line-shadow"></div>
-
             <a
               href={project.projectUrl}
               target="_blank"
@@ -174,7 +162,7 @@ const Projects = () => {
                 <motion.img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-full rounded-lg object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                   variants={imageVariants}
                 />
               </motion.div>
@@ -186,20 +174,22 @@ const Projects = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={projectTitleVariants}
               >
-                <h3 className="text-2xl font-semibold">{project.title}</h3>
-                <p className="text-sm  text-wow-gray w-4/5">
+                <h3 className="text-2xl font-semibold text-wow-green">
+                  {project.title}
+                </h3>
+                <p className="text-base md:text-sm text-wow-gray w-4/5">
                   {project.description}
                 </p>
               </motion.div>
 
               <motion.div
-                className="flex flex-wrap gap-2 mt-2 px-4"
+                className="flex flex-wrap gap-2 mt-2 px-4 pt-2 pb-6 w-4/5"
                 variants={techContainerVariants}
               >
                 {project.technologies.map((tech, idx) => (
                   <motion.span
                     key={idx}
-                    className="px-4 py-1 text-xs bg-blue-100 text-black border border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200"
+                    className="px-4 py-1 text-xs font-acorn bg-blue-100 rounded-full transition duration-300 hover:bg-blue-200"
                     variants={techItemVariants}
                   >
                     {tech}

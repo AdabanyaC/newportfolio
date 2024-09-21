@@ -44,7 +44,7 @@ const LogoSlider = () => {
   return (
     <div className="bg-cream-light py-16 px-4 md:px-16 flex flex-col">
       {/* Title Section */}
-      <div className="w-full md:w-1/2 px-4 mb-8 md:mb-16">
+      <div className="w-full md:w-1/2 mb-8 md:mb-16">
         <h2 className="text-4xl md:text-6xl font-bold capitalize text-wow-green">
           Tools & Technologies I'm exceptional at
         </h2>

@@ -10,6 +10,16 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleScrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      // Smooth scroll to section
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close menu when an item is clicked
+    }
+  };
+
+  // Add scroll event listener to detect when user scrolls down
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -25,6 +35,7 @@ const Navbar = () => {
     };
   }, []);
 
+  // Disable body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -55,11 +66,11 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              {/* <span className="text-2xl font-bold">✦</span> */}
               <span className="font-semibold text-lg">
                 <a href="#home">CA</a>
               </span>
             </motion.div>
+
             {/* Hamburger Icon */}
             <div className="md:hidden z-50" onClick={toggleMenu}>
               {isMenuOpen ? (
@@ -84,22 +95,65 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <a href="#home" className="font-medium text-wow-gray">
+            {/* Prevent default anchor behavior and call smooth scrolling */}
+            <a
+              href="#home"
+              className="font-medium text-wow-gray cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default jump to section
+                handleScrollToSection("home");
+              }}
+            >
               Home
             </a>
-            <a href="#about" className="font-medium text-wow-gray">
+            <a
+              href="#about"
+              className="font-medium text-wow-gray cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollToSection("about");
+              }}
+            >
               About
             </a>
-            <a href="#experience" className="font-medium text-wow-gray">
+            <a
+              href="#experience"
+              className="font-medium text-wow-gray cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollToSection("experience");
+              }}
+            >
               Experience
             </a>
-            <a href="#projects" className="font-medium text-wow-gray">
+            <a
+              href="#projects"
+              className="font-medium text-wow-gray cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollToSection("projects");
+              }}
+            >
               Projects
             </a>
-            <a href="#blog" className="font-medium text-wow-gray">
+            <a
+              href="#blog"
+              className="font-medium text-wow-gray cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollToSection("blog");
+              }}
+            >
               Blog
             </a>
-            <a href="#contact" className="font-medium text-wow-gray">
+            <a
+              href="#contact"
+              className="font-medium text-wow-gray cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollToSection("contact");
+              }}
+            >
               Contact
             </a>
           </motion.div>
@@ -122,36 +176,56 @@ const Navbar = () => {
                 <div className="flex flex-col items-center space-y-6">
                   <a
                     href="#about"
-                    className="font-medium text-wow-gray"
-                    onClick={toggleMenu}
+                    className="font-medium text-wow-gray cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScrollToSection("about");
+                      toggleMenu();
+                    }}
                   >
                     About
                   </a>
                   <a
                     href="#experience"
-                    className="font-medium text-wow-gray"
-                    onClick={toggleMenu}
+                    className="font-medium text-wow-gray cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScrollToSection("experience");
+                      toggleMenu();
+                    }}
                   >
                     Experience
                   </a>
                   <a
                     href="#projects"
-                    className="font-medium text-wow-gray"
-                    onClick={toggleMenu}
+                    className="font-medium text-wow-gray cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScrollToSection("projects");
+                      toggleMenu();
+                    }}
                   >
                     Projects
                   </a>
                   <a
                     href="#blog"
-                    className="font-medium text-wow-gray"
-                    onClick={toggleMenu}
+                    className="font-medium text-wow-gray cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScrollToSection("blog");
+                      toggleMenu();
+                    }}
                   >
                     Blog
                   </a>
                   <a
                     href="#contact"
-                    className="font-medium text-wow-gray"
-                    onClick={toggleMenu}
+                    className="font-medium text-wow-gray cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScrollToSection("contact");
+                      toggleMenu();
+                    }}
                   >
                     Contact
                   </a>

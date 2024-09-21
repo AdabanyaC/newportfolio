@@ -10,8 +10,10 @@ import CallToAction from "../components/CallToAction";
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <HeroLanding />
+      <div className="bg-cream-light">
+        <Navbar />
+        <HeroLanding />
+      </div>
       <LogoSlider />
       <Experience />
       <Projects />

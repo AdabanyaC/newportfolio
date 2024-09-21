@@ -191,11 +191,11 @@ const Experience = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-cream-light px-6 md:px-16 pt-12 md:pt-24 space-y-8 md:space-y-0">
+    <div className="flex flex-col md:flex-row bg-cream-light px-4 md:px-16 pt-12 md:pt-24 space-y-8 md:space-y-0">
       {/* Left section - About Me */}
       <motion.div
         id="about"
-        className="w-full md:w-1/2 p-4 md:p-8 md:sticky md:top-0 h-screen"
+        className="w-full md:w-1/2 md:p-8 md:sticky md:top-0 h-screen"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -224,7 +224,7 @@ const Experience = () => {
       </motion.div>
 
       {/* Right section - Experience */}
-      <div id="experience" className="w-full md:w-1/2 p-4 md:p-8 space-y-8">
+      <div id="experience" className="w-full md:w-1/2 md:p-8 space-y-8">
         <h2 className="text-4xl md:text-6xl font-bold mb-6 text-wow-green">
           Work Experience
         </h2>
@@ -275,7 +275,7 @@ const Experience = () => {
                 {experience.technologies.map((tech, idx) => (
                   <motion.span
                     key={idx}
-                    className="px-3 py-1 md:px-4 md:py-1 bg-blue-100 text-black border border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200"
+                    className="px-4 py-1 text-xs font-acorn bg-blue-100 rounded-full transition duration-300 hover:bg-blue-200"
                     variants={techItemVariants}
                   >
                     {tech}
