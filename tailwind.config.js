@@ -6,6 +6,9 @@ export default {
       acorn: ["acorn"],
     },
     extend: {
+      zIndex: {
+        100: "100",
+      },
       colors: {
         "cream-light": "#FDF6E4",
         "pink-dark": "#F8B6C3",

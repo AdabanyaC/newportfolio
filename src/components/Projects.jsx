@@ -84,13 +84,7 @@ const Projects = () => {
       projectUrl: "https://election-monitoring-rho.vercel.app/",
       description:
         "Developed an application that provides real-time data, updates, and information on presidential, gubernatorial and senatorial elections in Nigeria.",
-      technologies: [
-        "React",
-        "TailwindCSS",
-        "Contentful",
-        "Redux",
-        "JavaScript",
-      ],
+      technologies: ["React", "TailwindCSS", "Contentful", "Redux"],
     },
     {
       id: 4,
@@ -133,14 +127,14 @@ const Projects = () => {
   return (
     <motion.div
       id="projects"
-      className="bg-cream-light px-12 py-16"
+      className="bg-cream-light px-16 py-16"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
     >
       <motion.h2
-        className="text-4xl font-bold mb-12"
+        className="text-4xl md:text-6xl text-wow-green font-bold mb-12"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
       >
@@ -193,7 +187,7 @@ const Projects = () => {
                 variants={projectTitleVariants}
               >
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
-                <p className="text-sm text-gray-600 w-4/5">
+                <p className="text-sm  text-wow-gray w-4/5">
                   {project.description}
                 </p>
               </motion.div>

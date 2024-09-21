@@ -4,6 +4,7 @@ import IdeaBox from "./../assets/IdeaBox.svg";
 import Amoeba3 from "./../assets/amoeba3.svg";
 import Clinton from "./../assets/clinton.jpg";
 import Arrow7 from "./../assets/Arrow7.svg";
+import { MessageProgramming } from "iconsax-react";
 
 const HeroLanding = () => {
   return (
@@ -12,7 +13,7 @@ const HeroLanding = () => {
       <section className="md:hidden bg-cream-light h-screen py-4 px-4 flex flex-col items-center justify-between">
         {/* Left section with heading and text */}
         <motion.div
-          className="flex flex-col w-full text-center"
+          className="flex flex-col w-full text-center mt-24"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -97,7 +98,7 @@ const HeroLanding = () => {
           </p>
 
           <motion.button
-            className="w-44 mt-8 py-4 bg-wow-green text-white rounded-full shadow-md transition duration-300"
+            className="w-52 mt-8 py-4 bg-wow-green text-white rounded-full shadow-md transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -107,6 +108,7 @@ const HeroLanding = () => {
               className="flex justify-center items-center m-auto gap-2"
             >
               See My Projects
+              <MessageProgramming size={24} color="#FDF6E4" />
             </a>
           </motion.button>
         </motion.div>

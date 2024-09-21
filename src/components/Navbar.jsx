@@ -40,29 +40,46 @@ const Navbar = () => {
   return (
     <div id="home" className={isMenuOpen ? "overflow-hidden" : ""}>
       <nav
-        className={`${
-          isScrolled
-            ? "bg-white bg-opacity-30 backdrop-blur-md shadow-lg"
-            : "bg-cream-light"
-        } fixed top-0 w-full z-50 transition-all duration-300`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 px-4`}
       >
-        <div className="flex items-center justify-end md:justify-center w-full p-8 relative">
-          {/* Hamburger Icon */}
-          <div className="md:hidden z-50" onClick={toggleMenu}>
-            {isMenuOpen ? (
-              <CloseCircle
-                size="32"
-                variant="Bold"
-                className="text-white cursor-pointer"
-              />
-            ) : (
-              <HambergerMenu size="32" className="cursor-pointer" />
-            )}
+        <div className={`flex md:justify-center pt-10 relative`}>
+          <div
+            className={`flex items-center justify-between w-full md:w-0 rounded-full px-4 ${
+              isScrolled &&
+              "bg-white bg-opacity-70 backdrop-blur-md shadow-lg py-4 md:hidden"
+            }`}
+          >
+            <motion.div
+              className="flex items-center space-x-2 z-10 md:hidden bg-wow-green text-cream-light rounded-full p-2"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              {/* <span className="text-2xl font-bold">✦</span> */}
+              <span className="font-semibold text-lg">
+                <a href="#home">CA</a>
+              </span>
+            </motion.div>
+            {/* Hamburger Icon */}
+            <div className="md:hidden z-50" onClick={toggleMenu}>
+              {isMenuOpen ? (
+                <CloseCircle
+                  size="32"
+                  variant="Bold"
+                  className="text-white cursor-pointer"
+                />
+              ) : (
+                <HambergerMenu size="32" className="cursor-pointer" />
+              )}
+            </div>
           </div>
 
           {/* Desktop Nav Links */}
           <motion.div
-            className="hidden md:flex space-x-8 z-10"
+            className={`hidden md:flex space-x-8 z-10 rounded-full ${
+              isScrolled &&
+              "bg-white bg-opacity-70 backdrop-blur-md shadow-lg px-8 py-4"
+            }`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}

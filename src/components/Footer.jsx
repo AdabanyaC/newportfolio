@@ -39,15 +39,15 @@ const Footer = () => {
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h2 className="text-3xl font-semibold">
+          <h2 className="text-3xl md:text-5xl text-wow-green max-w-xl m-auto font-semibold">
             Do you have an idea? Let’s make magic together
           </h2>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 max-w-md m-auto mt-2">
             I am highly excited to meet with you and discuss the plans you have
             for your project.
           </p>
           <motion.button
-            className="w-44 mt-4 py-3 bg-blue-100 text-black border-2 border-black rounded-full shadow-md transition duration-300 hover:bg-blue-200 "
+            className="w-44 mt-4 py-3 bg-wow-green text-cream-light rounded-full shadow-md transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             variants={fadeInUp}
@@ -143,7 +143,7 @@ const Footer = () => {
 
         {/* Copyright Section */}
         <motion.div
-          className="text-gray-400 mt-8"
+          className="text-wow-gray mt-8"
           variants={fadeInUp}
           transition={{ duration: 0.5, delay: 0.8 }}
         >

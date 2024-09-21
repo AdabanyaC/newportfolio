@@ -191,7 +191,7 @@ const Experience = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-cream-light px-6 md:px-24 pt-12 md:pt-24 space-y-8 md:space-y-0">
+    <div className="flex flex-col md:flex-row bg-cream-light px-6 md:px-16 pt-12 md:pt-24 space-y-8 md:space-y-0">
       {/* Left section - About Me */}
       <motion.div
         id="about"
@@ -201,26 +201,33 @@ const Experience = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={aboutMeVariants}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">About Me</h2>
-        <p className="text-xl italic">
-          My journey into tech began on September 21st, 2016, when I wrote my
-          first "Hello World" as an undergraduate at Covenant University,
-          studying Computer Science.
-        </p>
-        <p className="mt-4">
-          Since then, I’ve built and deployed web applications across industries
-          like FinTech, Sports, Manufacturing, and Agriculture, collaborating
-          with teams to bring impactful digital solutions to life.
-        </p>
-        <p className="mt-4">
-          When I’m not coding, I enjoy watching football, playing FIFA,
-          listening to music, or reading books on theology.
-        </p>
+        <h2 className="text-4xl md:text-6xl font-bold mb-4 text-wow-green">
+          About Me
+        </h2>
+        <div className="mt-8">
+          <p className="text-xl italic">
+            My journey into tech began on September 21st, 2016, when I wrote my
+            first "Hello World" as an undergraduate at Covenant University,
+            studying Computer Science.
+          </p>
+          <p className="mt-4">
+            Since then, I’ve built and deployed web applications across
+            industries like FinTech, Sports, Manufacturing, and Agriculture,
+            collaborating with teams to bring impactful digital solutions to
+            life.
+          </p>
+          <p className="mt-4">
+            When I’m not coding, I enjoy watching football, playing FIFA,
+            listening to music, or reading books on theology.
+          </p>
+        </div>
       </motion.div>
 
       {/* Right section - Experience */}
       <div id="experience" className="w-full md:w-1/2 p-4 md:p-8 space-y-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6">Work Experience</h2>
+        <h2 className="text-4xl md:text-6xl font-bold mb-6 text-wow-green">
+          Work Experience
+        </h2>
 
         {/* Loop through experiences array */}
         {experiences.map((experience, index) => (
@@ -229,7 +236,7 @@ const Experience = () => {
             href={experience.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-4 py-6 md:px-6 md:py-8 hover:border-black hover:rounded-2xl hover:shadow-md hover:bg-white hover:bg-opacity-30 hover:border-opacity-50 transition-all duration-300"
+            className="block px-4 py-6 md:px-6 md:py-0 hover:border-black hover:rounded-3xl hover:shadow-md hover:bg-white hover:bg-opacity-30 hover:border-opacity-50 transition-all duration-300"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -242,14 +249,12 @@ const Experience = () => {
                   {experience.title} -{" "}
                   <span className="underline">{experience.company}</span>
                 </p>
-                <p className="text-xs md:text-sm text-gray-600">
-                  {experience.date}
-                </p>
+                <p className="italic text-wow-gray">{experience.date}</p>
               </motion.div>
 
               {/* Responsibilities */}
               <motion.ul
-                className="list-disc ml-4 text-sm md:text-base"
+                className="list-disc ml-4 text-base"
                 variants={responsibilitiesVariants}
               >
                 {experience.responsibilities.map((responsibility, idx) => (

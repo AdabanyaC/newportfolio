@@ -28,3 +28,8 @@ body {
 .my-line-shadow {
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
 }
+
+.my-color-backdrop {
+  color-backdrop: hsla(45, 17%, 95%, 0.8);
+  backdrop-filter: blur(20px) saturate(1.7);
+}

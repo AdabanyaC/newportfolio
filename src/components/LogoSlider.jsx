@@ -42,17 +42,17 @@ const itemVariants = {
 
 const LogoSlider = () => {
   return (
-    <div className="bg-black py-16 px-4 md:px-8 flex flex-col md:flex-row items-center">
+    <div className="bg-cream-light py-16 px-4 md:px-16 flex flex-col">
       {/* Title Section */}
-      <div className="text-white w-full md:w-1/3 px-4 mb-8 md:mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold capitalize text-center md:text-left">
+      <div className="w-full md:w-1/2 px-4 mb-8 md:mb-16">
+        <h2 className="text-4xl md:text-6xl font-bold capitalize text-wow-green">
           Tools & Technologies I'm exceptional at
         </h2>
       </div>
 
       {/* Animated Grid Layout */}
       <motion.div
-        className="grid grid-cols-4 md:grid-cols-6 gap-8 md:gap-16 w-full"
+        className="grid grid-cols-4 md:grid-cols-6 gap-4 md:gap-8 w-full"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible" // Trigger animation when in view
@@ -61,7 +61,7 @@ const LogoSlider = () => {
         {tools.map((tool, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center bg-[hsla(0,0%,100%,0.5)] rounded-lg p-4"
             variants={itemVariants} // Apply animation to each logo
           >
             <img
@@ -69,7 +69,7 @@ const LogoSlider = () => {
               alt={`${tool.name} Logo`}
               className="h-12 sm:h-16 md:h-24 object-contain"
             />
-            <p className="text-gray-50 mt-2 text-xs sm:text-sm md:text-base">
+            <p className="text-gray-700 mt-2 text-xs sm:text-sm md:text-base">
               {tool.name}
             </p>
           </motion.div>

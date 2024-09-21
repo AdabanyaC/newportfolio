@@ -17,14 +17,16 @@ const CallToAction = () => {
   return (
     <motion.div
       id="blog"
-      className="px-12 py-16 bg-cream-light"
+      className="px-16 py-16 bg-cream-light"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
     >
       {/* Section Title */}
-      <h2 className="text-4xl font-semibold mb-12">Read My Blog Posts</h2>
+      <h2 className="text-4xl md:text-6xl text-wow-green font-semibold mb-12">
+        Read My Blog Posts
+      </h2>
 
       {/* Blog Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -54,9 +56,7 @@ const CallToAction = () => {
 
           <div className="p-6 relative">
             <h3 className="text-2xl font-bold mb-2">{blogPost.title}</h3>
-            <p className="text-gray-600 mb-4 w-4/5 text-sm">
-              {blogPost.description}
-            </p>
+            <p className=" mb-4 w-4/5 text-wow-gray">{blogPost.description}</p>
 
             {/* Styled Arrow Icon */}
             <motion.div
