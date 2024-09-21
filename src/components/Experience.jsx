@@ -204,7 +204,7 @@ const Experience = () => {
         <h2 className="text-4xl md:text-6xl font-bold mb-4 text-wow-green">
           About Me
         </h2>
-        <div className="mt-8">
+        <div className="mt-16">
           <p className="text-xl italic">
             My journey into tech began on September 21st, 2016, when I wrote my
             first "Hello World" as an undergraduate at Covenant University,
@@ -236,7 +236,7 @@ const Experience = () => {
             href={experience.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-4 py-6 md:px-6 md:py-0 hover:border-black hover:rounded-3xl hover:shadow-md hover:bg-white hover:bg-opacity-30 hover:border-opacity-50 transition-all duration-300"
+            className="block px-4 py-6 md:px-6 md:py-8 hover:border-black hover:rounded-3xl hover:shadow-md hover:bg-white hover:bg-opacity-30 hover:border-opacity-50 transition-all duration-300"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -245,16 +245,16 @@ const Experience = () => {
             <div className="space-y-4">
               {/* Title and company */}
               <motion.div variants={titleVariants}>
-                <p className="text-lg md:text-xl font-semibold">
+                <h4 className="text-lg md:text-2xl font-bold text-wow-green">
                   {experience.title} -{" "}
                   <span className="underline">{experience.company}</span>
-                </p>
+                </h4>
                 <p className="italic text-wow-gray">{experience.date}</p>
               </motion.div>
 
               {/* Responsibilities */}
               <motion.ul
-                className="list-disc ml-4 text-base"
+                className="list-disc ml-4 text-base text-wow-gray"
                 variants={responsibilitiesVariants}
               >
                 {experience.responsibilities.map((responsibility, idx) => (
@@ -285,18 +285,24 @@ const Experience = () => {
             </div>
           </motion.a>
         ))}
-
-        {/* Button to view full resume */}
         <motion.button
           onClick={handleResumeClick}
-          className="flex items-center text-black font-bold text-lg md:text-xl mt-8"
+          className="w-60 mt-8 py-4 bg-wow-green text-white rounded-full shadow-md transition duration-300"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1, transition: { duration: 0.6 } }}
         >
-          View Full Résumé
-          <div className="ml-2 -rotate-45">
-            <ArrowRight size="24" />
-          </div>
+          <span
+            href="#experience"
+            className="flex justify-center items-center m-auto gap-2"
+          >
+            View Full Résumé
+            <div className="ml-2 -rotate-45">
+              <ArrowRight size="24" />
+            </div>
+          </span>
         </motion.button>
       </div>
     </div>

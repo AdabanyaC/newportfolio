@@ -208,13 +208,13 @@ const Projects = () => {
               </motion.div>
 
               <motion.div
-                className="absolute bottom-6 right-6 flex items-center justify-center bg-black p-3 rounded-full shadow-lg transition-transform duration-300 transform group-hover:translate-x-2"
+                className="absolute bottom-6 right-6 flex items-center justify-center bg-wow-green p-3 rounded-full shadow-lg transition-transform duration-300 transform group-hover:translate-x-2"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5 }}
               >
-                <ArrowRight size="24" className="text-white -rotate-45" />
+                <ArrowRight size="24" className="text-cream-light -rotate-45" />
               </motion.div>
             </a>
           </motion.div>
