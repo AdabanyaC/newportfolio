@@ -33,3 +33,12 @@ body {
   color-backdrop: hsla(45, 17%, 95%, 0.8);
   backdrop-filter: blur(20px) saturate(1.7);
 }
+
+.my-gradient {
+  background-image: linear-gradient(
+    to right,
+    #fdf6e4,
+    /* #ffd9b3, */ /* #ffcc99, */ #ffe7c2,
+    #f9e8d7
+  );
+}

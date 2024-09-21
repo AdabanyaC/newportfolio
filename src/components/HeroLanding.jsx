@@ -10,7 +10,7 @@ const HeroLanding = () => {
   return (
     <>
       {/* Mobile View */}
-      <section className="md:hidden bg-cream-light py-4 flex space-y-24 flex-col items-center justify-between">
+      <section className="md:hidden py-4 flex space-y-24 flex-col items-center justify-between">
         {/* Left section with heading and text */}
         <motion.div
           className="flex flex-col w-full text-center mt-24"
@@ -94,7 +94,7 @@ const HeroLanding = () => {
       </section>
 
       {/* Desktop View */}
-      <section className="hidden md:block bg-cream-light h-screen py-8 px-4 flex-col items-center justify-center lg:flex-row lg:py-40">
+      <section className="hidden md:block h-screen py-8 px-4 flex-col items-center justify-center lg:flex-row lg:py-40">
         {/* Left section with heading and text */}
         <motion.div
           className="flex flex-col justify-center items-center w-full lg:px-16 px-4 text-center"
