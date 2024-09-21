@@ -10,6 +10,7 @@ import Typescript from "./../assets/tools/typescript.png";
 import Bootstrap from "./../assets/tools/bootstrap.png";
 import Contentful from "./../assets/tools/contentful.svg";
 import Strapi from "./../assets/tools/strapi.png";
+import Github from "./../assets/tools/github.png";
 
 const tools = [
   { name: "HTML5", logo: Html5 },
@@ -23,6 +24,7 @@ const tools = [
   { name: "Bootstrap", logo: Bootstrap },
   { name: "Contentful", logo: Contentful },
   { name: "Strapi", logo: Strapi },
+  { name: "Github", logo: Github },
 ];
 
 const containerVariants = {

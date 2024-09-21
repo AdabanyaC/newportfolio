@@ -104,11 +104,11 @@ const Footer = () => {
               href={icon.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-600 transition-colors duration-200"
+              className="hover:text-gray-600 transition-colors duration-200 bg-[hsla(0,0%,100%,0.5)] p-2 shadow rounded-md"
               variants={fadeInUp}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <img src={icon.src} alt={icon.alt} className="w-6 h-6" />
+              <img src={icon.src} alt={icon.alt} className="w-4 h-4" />
             </motion.a>
           ))}
         </motion.div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "iconsax-react";
+import Clinton from "./../assets/clinton.jpg";
 
 const experiences = [
   {
@@ -191,11 +192,11 @@ const Experience = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-cream-light px-4 md:px-16 pt-12 md:pt-24 space-y-8 md:space-y-0">
+    <div className="flex flex-col md:flex-row bg-cream-light px-4 md:px-16 pt-12 md:pt-24 md:space-x-16 space-y-8 md:space-y-0">
       {/* Left section - About Me */}
       <motion.div
         id="about"
-        className="w-full md:w-1/2 md:p-8 md:sticky md:top-0 h-screen"
+        className="w-full md:w-1/2 md:py-8 md:sticky md:top-0 h-screen"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -204,8 +205,19 @@ const Experience = () => {
         <h2 className="text-4xl md:text-6xl font-bold mb-4 text-wow-green">
           About Me
         </h2>
-        <div className="mt-16">
-          <p className="text-xl italic">
+        <div className="">
+          <motion.div className="border-2 border-black w-2/3 sm:w-60 relative rounded-full hidden md:block">
+            <div className="absolute inset-0 bg-black rounded-full transform -rotate-6 -translate-x-2 sm:-translate-x-3 translate-y-2 sm:translate-y-3 blur-md opacity-70"></div>
+            <motion.img
+              src={Clinton}
+              alt="Clinton portrait"
+              className="relative z-10 rounded-full w-60 h-60 object-cover object-top"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+            />
+          </motion.div>
+          <p className="text-xl italic mt-8">
             My journey into tech began on September 21st, 2016, when I wrote my
             first "Hello World" as an undergraduate at Covenant University,
             studying Computer Science.
