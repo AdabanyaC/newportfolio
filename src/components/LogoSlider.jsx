@@ -52,7 +52,7 @@ const LogoSlider = () => {
 
       {/* Animated Grid Layout */}
       <motion.div
-        className="grid grid-cols-4 md:grid-cols-6 gap-4 md:gap-8 w-full"
+        className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-8 w-full"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible" // Trigger animation when in view
@@ -69,7 +69,7 @@ const LogoSlider = () => {
               alt={`${tool.name} Logo`}
               className="h-12 sm:h-16 md:h-24 object-contain"
             />
-            <p className="text-gray-700 mt-2 text-xs sm:text-sm md:text-base">
+            <p className="text-gray-700 mt-2 sm:text-sm md:text-base">
               {tool.name}
             </p>
           </motion.div>
