@@ -42,11 +42,11 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 px-4`}
       >
-        <div className={`flex md:justify-center pt-10 relative`}>
+        <div className={`flex md:justify-center pt-5 md:pt-10 relative`}>
           <div
-            className={`flex items-center justify-between w-full md:w-0 rounded-full px-4 ${
+            className={`flex items-center justify-between w-full md:w-0 rounded-full px- ${
               isScrolled &&
-              "bg-white bg-opacity-70 backdrop-blur-md shadow-lg py-4 md:hidden"
+              "bg-white bg-opacity-70 backdrop-blur-md shadow-lg px-4 py-2 md:hidden"
             }`}
           >
             <motion.div

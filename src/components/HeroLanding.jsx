@@ -10,7 +10,7 @@ const HeroLanding = () => {
   return (
     <>
       {/* Mobile View */}
-      <section className="md:hidden bg-cream-light h-screen py-4 px-4 flex flex-col items-center justify-between">
+      <section className="md:hidden bg-cream-light py-4 px-4 flex space-y-24 flex-col items-center justify-between">
         {/* Left section with heading and text */}
         <motion.div
           className="flex flex-col w-full text-center mt-24"
@@ -18,7 +18,7 @@ const HeroLanding = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl md:text-6xl font-bold text-wow-green">
+          <h1 className="text-3xl md:text-6xl text-wow-green">
             Hi, I'm Clinton Adabanya.
             <br />A Frontend Engineer.
           </h1>
@@ -27,6 +27,21 @@ const HeroLanding = () => {
             I build pixel-perfect, engaging, and accessible web and mobile
             applications.
           </p>
+
+          <motion.button
+            className="w-52 m-auto mt-4 py-4 bg-wow-green text-white rounded-full shadow-md transition duration-300 flex justify-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <a
+              href="#experience"
+              className="flex justify-center items-center m-auto gap-2"
+            >
+              See My Projects
+              <MessageProgramming size={24} color="#FDF6E4" />
+            </a>
+          </motion.button>
         </motion.div>
 
         {/* Right section with image and icons */}
@@ -37,7 +52,7 @@ const HeroLanding = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <motion.div
-            className="absolute -top-16 sm:-top-28"
+            className="absolute -top-20 sm:-top-28"
             initial={{ opacity: 0, rotate: -45 }}
             animate={{ opacity: 1, rotate: 0 }}
             transition={{ duration: 0.8 }}
