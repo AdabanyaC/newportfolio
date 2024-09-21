@@ -6,20 +6,21 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Toggle Menu function
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
+  // Scroll to section function
   const handleScrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      // Smooth scroll to section
       element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false); // Close menu when an item is clicked
     }
   };
 
-  // Add scroll event listener to detect when user scrolls down
+  // Listen to scroll event
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -35,7 +36,7 @@ const Navbar = () => {
     };
   }, []);
 
-  // Disable body scroll when mobile menu is open
+  // Handle disabling body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -73,13 +74,7 @@ const Navbar = () => {
 
             {/* Hamburger Icon */}
             <div className="md:hidden z-50" onClick={toggleMenu}>
-              {isMenuOpen ? (
-                <CloseCircle
-                  size="32"
-                  variant="Bold"
-                  className="text-white cursor-pointer"
-                />
-              ) : (
+              {!isMenuOpen && (
                 <HambergerMenu size="32" className="cursor-pointer" />
               )}
             </div>
@@ -95,12 +90,11 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            {/* Prevent default anchor behavior and call smooth scrolling */}
             <a
               href="#home"
               className="font-medium text-wow-gray cursor-pointer"
               onClick={(e) => {
-                e.preventDefault(); // Prevent default jump to section
+                e.preventDefault();
                 handleScrollToSection("home");
               }}
             >
@@ -167,20 +161,40 @@ const Navbar = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
               />
+
               <motion.div
                 className="fixed inset-0 top-16 bg-white h-fit py-6 z-20 rounded-lg mx-8 mt-4"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
               >
+                {isMenuOpen && (
+                  <div className="absolute -top-10 right-0">
+                    <CloseCircle
+                      variant="Bold"
+                      size="32"
+                      className="text-white cursor-pointer"
+                      onClick={toggleMenu}
+                    />
+                  </div>
+                )}
                 <div className="flex flex-col items-center space-y-6">
+                  <a
+                    href="#home"
+                    className="font-medium text-wow-gray cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScrollToSection("home");
+                    }}
+                  >
+                    Home
+                  </a>
                   <a
                     href="#about"
                     className="font-medium text-wow-gray cursor-pointer"
                     onClick={(e) => {
                       e.preventDefault();
                       handleScrollToSection("about");
-                      toggleMenu();
                     }}
                   >
                     About
@@ -191,7 +205,6 @@ const Navbar = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       handleScrollToSection("experience");
-                      toggleMenu();
                     }}
                   >
                     Experience
@@ -202,7 +215,6 @@ const Navbar = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       handleScrollToSection("projects");
-                      toggleMenu();
                     }}
                   >
                     Projects
@@ -213,7 +225,6 @@ const Navbar = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       handleScrollToSection("blog");
-                      toggleMenu();
                     }}
                   >
                     Blog
@@ -224,7 +235,6 @@ const Navbar = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       handleScrollToSection("contact");
-                      toggleMenu();
                     }}
                   >
                     Contact
