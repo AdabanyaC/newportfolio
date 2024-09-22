@@ -7,6 +7,14 @@ import Arrow7 from "./../assets/Arrow7.svg";
 import { MessageProgramming } from "iconsax-react";
 
 const HeroLanding = () => {
+  // Scroll to section function
+  const handleScrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* Mobile View */}
@@ -35,8 +43,12 @@ const HeroLanding = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <a
-              href="#experience"
+              href="#projects"
               className="flex justify-center items-center m-auto gap-2"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollToSection("projects");
+              }}
             >
               See My Projects
               <MessageProgramming size={24} color="#FDF6E4" />
@@ -119,8 +131,12 @@ const HeroLanding = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <a
-              href="#experience"
+              href="#projects"
               className="flex justify-center items-center m-auto gap-2"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollToSection("projects");
+              }}
             >
               See My Projects
               <MessageProgramming size={24} color="#FDF6E4" />
