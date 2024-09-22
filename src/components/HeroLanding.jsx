@@ -24,8 +24,8 @@ const HeroLanding = () => {
           </h1>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-lg mt-3 sm:mt-2 mx-auto">
-            I build pixel-perfect, engaging, and accessible web and mobile
-            applications.
+            I'm passionate about building pixel-perfect, engaging, and
+            accessible web and mobile applications that solve complex problems.
           </p>
 
           <motion.button
