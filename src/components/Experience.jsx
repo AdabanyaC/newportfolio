@@ -287,7 +287,7 @@ const Experience = () => {
                 {experience.technologies.map((tech, idx) => (
                   <motion.span
                     key={idx}
-                    className="px-4 py-1 text-xs font-acorn bg-blue-100 rounded-full transition duration-300 hover:bg-blue-200"
+                    className="px-4 py-1 text-xs font-acorn bg-green-100 border border-green-200 text-green-800 rounded-full transition duration-300 hover:bg-green-200"
                     variants={techItemVariants}
                   >
                     {tech}
