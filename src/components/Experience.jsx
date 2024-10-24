@@ -49,7 +49,7 @@ const experiences = [
       "Collaborated with the engineering team to create an e-commerce application for Lamberet, increasing website conversions by over 50%",
       "Improved internal software for managing products, storage, and sales, boosting factory production by 30%.",
       " Resolved bugs to enhance stability and efficiency of current software",
-    ],
+  ],
     technologies: [
       "HTML5",
       "CSS3",
