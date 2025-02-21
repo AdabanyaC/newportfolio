@@ -65,7 +65,7 @@ const Projects = () => {
       title: "Octave Labs",
       imageUrl:
         "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726669975/Screenshot_481.png",
-      projectUrl: "https://octave.ng",
+      projectUrl: "https://octave-app.vercel.app",
       description:
         "I worked closely with product designers to bring their vision to life by developing responsive, visually appealing user interfaces using React.",
       technologies: [

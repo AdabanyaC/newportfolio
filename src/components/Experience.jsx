@@ -25,7 +25,7 @@ const experiences = [
       "REST API",
       "Payment Integration",
     ],
-    url: "https://octave.ng",
+    url: "https://octave-app.vercel.app",
   },
   {
     title: "React Native Mobile Developer",
@@ -49,7 +49,7 @@ const experiences = [
       "Collaborated with the engineering team to create an e-commerce application for Lamberet, increasing website conversions by over 50%",
       "Improved internal software for managing products, storage, and sales, boosting factory production by 30%.",
       " Resolved bugs to enhance stability and efficiency of current software",
-  ],
+    ],
     technologies: [
       "HTML5",
       "CSS3",
@@ -165,7 +165,7 @@ const aboutMeVariants = {
 const Experience = () => {
   const handleResumeClick = () => {
     window.open(
-      "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726652153/Clinton_Adabanya_-_Frontend_Engineer_N.pdf",
+      "https://res.cloudinary.com/dbdgevqyn/image/upload/v1740108245/CAFE_ayjla4.pdf",
       "_blank"
     );
   };
