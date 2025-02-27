@@ -42,9 +42,15 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const LogoSlider = () => {
+const LogoSlider = ({ classNames }) => {
   return (
-    <div className="bg-cream-light py-16 px-4 md:px-16 flex flex-col">
+    <div
+      className={`${
+        classNames
+          ? classNames
+          : "bg-cream-light py-16 px-4 md:px-16 flex flex-col"
+      }`}
+    >
       {/* Title Section */}
       <div className="w-full md:w-1/2 mb-8 md:mb-16">
         <h2 className="text-4xl md:text-6xl font-bold capitalize text-wow-green">

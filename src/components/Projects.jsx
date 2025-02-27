@@ -45,6 +45,16 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Octave Labs",
+      imageUrl:
+        "https://res.cloudinary.com/dbdgevqyn/image/upload/v1740617924/Screenshot_510_wxanvt.png",
+      projectUrl: "https://octavelabs.co",
+      description:
+        "I developed a pixel-perfect website for a digital agency, Octave Labs, using React and TailwindCSS. The website is fully responsive and accessible.",
+      technologies: ["React", "TailwindCSS", "Figma", "JavaScript"],
+    },
+    {
+      id: 2,
       title: "Football O' Clock",
       imageUrl:
         "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662609/Screenshot_479.png",
@@ -61,8 +71,8 @@ const Projects = () => {
       ],
     },
     {
-      id: 2,
-      title: "Octave Labs",
+      id: 3,
+      title: "Octave Finance",
       imageUrl:
         "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726669975/Screenshot_481.png",
       projectUrl: "https://octave-app.vercel.app",
@@ -77,7 +87,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 3,
+      id: 4,
       title: "Election Monitoring App",
       imageUrl:
         "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726652184/Screenshot_477.png",
@@ -87,7 +97,7 @@ const Projects = () => {
       technologies: ["React", "TailwindCSS", "Contentful", "Redux"],
     },
     {
-      id: 4,
+      id: 5,
       title: "Nelson Iheagwam Ministries",
       imageUrl:
         "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662790/Screenshot_480.png",
@@ -97,7 +107,7 @@ const Projects = () => {
       technologies: ["React", "TailwindCSS", "API Integration", "JavaScript"],
     },
     {
-      id: 5,
+      id: 6,
       title: "Earthquake Data",
       imageUrl:
         "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662789/10.a450e120.png",
@@ -113,7 +123,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 6,
+      id: 7,
       title: "Travel Website Landing Page",
       imageUrl:
         "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662792/1.f2ca70fc.png",

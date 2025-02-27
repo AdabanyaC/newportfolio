@@ -150,6 +150,12 @@ const Navbar = () => {
             >
               Contact
             </a>
+            <a
+              href="/personal-profile"
+              className="font-medium text-wow-gray cursor-pointer"
+            >
+              Personal Profile
+            </a>
           </motion.div>
 
           {/* Mobile Nav Menu */}

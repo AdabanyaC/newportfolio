@@ -106,7 +106,7 @@ const HeroLanding = () => {
       </section>
 
       {/* Desktop View */}
-      <section className="hidden md:block h-screen py-8 px-4 flex-col items-center justify-center lg:flex-row lg:py-40">
+      <section className="hidden md:block h-screen py-8 px-4 flex-col items-center justify-center lg:flex-row lg:py-60">
         {/* Left section with heading and text */}
         <motion.div
           className="flex flex-col justify-center items-center w-full lg:px-16 px-4 text-center"
@@ -114,7 +114,7 @@ const HeroLanding = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl md:text-[8rem] text-wow-green font-bold tracking-normal leading-none">
+          <h1 className="text-3xl md:text-[8rem] lg:text-[9rem] text-wow-green font-bold tracking-normal leading-none">
             Hi, I'm Clinton.
             <br />A Frontend Engineer.
           </h1>
