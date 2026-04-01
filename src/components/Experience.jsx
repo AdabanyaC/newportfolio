@@ -165,7 +165,7 @@ const aboutMeVariants = {
 const Experience = () => {
   const handleResumeClick = () => {
     window.open(
-      "https://res.cloudinary.com/dbdgevqyn/image/upload/v1740108245/CAFE_ayjla4.pdf",
+      "https://res.cloudinary.com/dbdgevqyn/image/upload/v1775069872/portfolio/CAFE_ALT.pdf",
       "_blank"
     );
   };
