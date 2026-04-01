@@ -116,7 +116,7 @@ const HeroLanding = () => {
         >
           <h1 className="text-3xl md:text-[8rem] lg:text-[9rem] text-wow-green font-bold tracking-normal leading-none">
             Hi, I'm Clinton.
-            <br />A Frontend Engineer.
+            <br />A Software Engineer.
           </h1>
 
           <p className="text-base sm:text-xl text-gray-700 max-w-2xl mt-3 sm:mt-4 mx-auto lg:mx-0">
