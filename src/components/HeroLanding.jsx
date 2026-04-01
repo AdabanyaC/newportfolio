@@ -28,7 +28,7 @@ const HeroLanding = () => {
         >
           <h1 className="text-3xl md:text-6xl text-wow-green">
             Hi, I'm Clinton Adabanya.
-            <br />A Frontend Engineer.
+            <br />A Software Engineer.
           </h1>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-lg mt-3 sm:mt-2 mx-auto">
