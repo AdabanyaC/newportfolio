@@ -21,6 +21,7 @@ export function formattingSubject(message,history){const req=presentationRequest
 }
 const sentences=text=>text.split(/(?<=[.!?])\s+(?=[A-Z])|\n\n+/).map(s=>s.trim()).filter(Boolean);
 function facts(data,answer){
+ if(answer.strengthPoints)return answer.strengthPoints;
  if(['career','profile','experience','current-work'].includes(answer.topic))return data.experience.map(j=>`${j.role} at ${j.company} (${j.dates}).`);
  if(answer.topic==='projects')return answer.projectIds.map(id=>`${data.projects[id].title}: ${data.projects[id].description}`);
  if(answer.topic.startsWith('project:')){const p=data.projects[answer.topic.slice(8)];return [p.description,p.contribution,p.focus];}

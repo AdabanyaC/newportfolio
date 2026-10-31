@@ -50,10 +50,37 @@ function entityAnswer(data,e,q){const f=facet(q);if(e.type==='project'){const p=
  else {const hits=rank(data,q,e);const specific=hits[0]?.coverage>=.4&&terms(q).some(w=>!terms(j.company+' '+j.role).includes(w));text=`${j.role} at ${j.company} (${j.dates}).\n\n${specific?hits.slice(0,2).map(h=>h.text.replace(j.company+': ','')).join('\n\n'):j.bullets.slice(0,3).join('\n\n')}`;}
  return answerBundle(data,text,{topic:`job:${e.id}`,suggestions:[`When did Clinton join ${j.company}?`,`What did Clinton build at ${j.company}?`]});
 }
+// Summarise demonstrated strengths from source passages, never personality guesses.
+const strengthsIntent=q=>/\b(strengths?|strongest qualities|good at|best at|excel at|excels at|stand out|stands out|bring to the team|bring to a team|value do you bring|value does clinton bring)\b/.test(q)||/\bwhat sets\b.*\bapart\b/.test(q)||/\bwhy\b.*\b(hire|hiring|choose|recruit)\b/.test(q);
+function strengthsAnswer(data,entity=null){
+ const categories=[
+  ['Frontend architecture', /frontend architecture|reusable (?:react )?components/i],
+  ['Web and mobile delivery', /(?:mobile app|react native).*(?:expo|ios|android)|(?:expo).*(?:mobile|ios|android)/i],
+  ['Production reliability', /resilient|self-healing|systematic testing/i],
+  ['Technical leadership', /code reviews|sprint planning|lead.*cross-functional team/i]
+ ];
+ const docs=knowledge(data).docs.filter(d=>d.entity&&(!entity||(d.entity.type===entity.type&&d.entity.id===entity.id)));
+ const used=new Set(),points=[];
+ for(const [label,pattern] of categories){const doc=docs.find(d=>!used.has(d.id)&&pattern.test(d.text));if(doc){used.add(doc.id);points.push({label,doc});}}
+ if(!points.length)return answerBundle(data,'There is not enough documented evidence to summarise strengths for that subject. Ask about a specific contribution or project.',{sourceIds:[],topic:'unknown'});
+ return {...answerBundle(data,'Based on his documented work, Clinton’s demonstrated strengths include:\n\n'+points.map(p=>`${p.label}: ${p.doc.text}`).join('\n\n'),{
+  sourceIds:points.map(p=>p.doc.source),topic:'strengths',suggestions:['What did Clinton build at Good Growth?','Tell me about Breed','How can I contact Clinton?']
+ }),strengthPoints:points.map(p=>`${p.label}: ${p.doc.text}`)};
+}
 function singleAnswer(data,message,history=[]){const q=corrected(data,message);const explicit=entities(data,q);const context=!explicit.length?contextualEntity(data,q,history):null;const active=explicit.length===1?explicit[0]:context;
  const reply=(text,opts)=>answerBundle(data,text,opts);
  // Facts absent from the source must never be inferred from adjacent facts.
  if(/\b(salary|pay expectation|earning|earnings|paid|compensation|visa|sponsorship|sponsor|citizenship|nationality|work authorisation|work authorization|right to work|eligible|availability|available|notice period|date of birth|birthday|age|old is|born|birthplace|married|marital|home address|street address|postcode|postal code)\b/.test(q)||/\bwhere\b.*\b(originally|from|grew up)\b/.test(q))return reply(`That information isn’t stated in Clinton’s résumé or portfolio. ${/\b(where|from|nationality|born)\b/.test(q)?`His current base is ${data.location}, but that does not establish his birthplace or nationality. `:''}You can ask him directly at ${data.email}.`,{topic:'unknown',sourceIds:[],suggestions:['Where is Clinton currently based?','How can I contact Clinton?']});
+ // Broad professional assessments take precedence over generic contact/entity retrieval.
+ const strengthQ=strengthsIntent(clean(message))||strengthsIntent(q);
+ const previous=history.filter(m=>m.role==='user').at(-1);
+ const strengthFollowup=/^(?:can you )?(?:give (?:me )?(?:some )?examples|show (?:me )?(?:the )?evidence|back that up|why do you say that|what makes you say that|tell me more)\b/.test(q)&&previous&&strengthsIntent(clean(previous.content));
+ if(/\b(weaknesses|weakness|weak points|areas for improvement|bad at)\b/.test(q))return reply((strengthQ?strengthsAnswer(data).text+'\n\n':'')+'The résumé and portfolio do not document weaknesses or areas for improvement, so I can’t assess those reliably. You can discuss them directly with Clinton.',{topic:strengthQ?'strengths':'unknown',sourceIds:strengthQ?[0]:[]});
+ if(strengthQ||strengthFollowup){
+  const scope=strengthFollowup?entities(data,corrected(data,previous.content)):explicit;
+  if(scope.length>1)return reply('Which project or employer should I use to explain his strengths?',{topic:'clarification',sourceIds:[]});
+  return strengthsAnswer(data,scope[0]||null);
+ }
  if(/\b(remote|relocate|relocation|hybrid|onsite|on site)\b/.test(q)&&!active&&!/\blogg\b/.test(q))return reply(`Clinton is based in ${data.location}. His Octave Infrastructure Labs and freelance roles are listed as remote. His preferences for a new role or relocation aren’t specified; contact ${data.email} to discuss them.`,{topic:'working-arrangements'});
  if(/\b(resume|cv)\b/.test(q))return reply(`You can view Clinton’s current résumé here: ${data.resumeUrl}\n\nIt covers his work experience, education, skills, and projects.`,{topic:'resume'});
  if(/\b(contact|email|reach|connect|touch|hire|hiring|message him)\b/.test(q))return reply(`You can reach Clinton at ${data.email}. He is based in ${data.location}.`,{topic:'contact'});

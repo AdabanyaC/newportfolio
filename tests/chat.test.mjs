@@ -78,3 +78,31 @@ test('formatting does not manufacture missing private facts',()=>{const a=ask('D
 test('format-only request without context asks for a subject',()=>assert.equal(ask('In three words').topic,'clarification'));
 test('oversized word-count requests return an explicit limit',()=>assert.match(ask('Describe Clinton’s experience in 100 words').text,/can’t reliably reduce/));
 test('browser formatter module is served as JavaScript',async t=>{const base=await fixture(t);const r=await fetch(base+'/formats.mjs');assert.equal(r.status,200);assert.match(r.headers.get('content-type'),/javascript/);});
+
+for (const question of ["What are Clinton's strengths?",'What are your strengths?','What is he good at?','What makes Clinton stand out?','Why should we hire Clinton?','What sets Clinton apart?','What can you bring to the team?']) {
+ test(`professional strengths: ${question}`,()=>{
+  const a=ask(question);assert.equal(a.topic,'strengths');assert.match(a.text,/Frontend architecture/);assert.match(a.text,/React Native/);assert.match(a.text,/Good Growth/);assert.ok(a.sources.length);assert.equal(a.mode,'local');
+ });
+}
+test('strengths ignore stale project context',()=>{
+ assert.match(ask('What are his strengths?',history('Tell me about Logg')).text,/Good Growth/);
+});
+test('strengths can be scoped to a named employer',()=>{
+ const a=ask('What strengths did Clinton demonstrate at Good Growth?');assert.equal(a.topic,'strengths');assert.match(a.text,/resilient/i);assert.doesNotMatch(a.text,/Breed|Octave/);
+});
+test('strengths evidence follow-up retains its scope',()=>{
+ const a=ask('Give me examples',history('What are his strengths at Good Growth?'));assert.equal(a.topic,'strengths');assert.doesNotMatch(a.text,/Breed|Octave/);
+});
+test('unrelated follow-up does not inherit a strengths topic',()=>{
+ assert.notEqual(ask('Give me examples',history('What are his strengths?','Where is he based?')).topic,'strengths');
+});
+test('strengths bullets contain supported examples rather than the introduction',()=>{
+ const a=ask('Describe his strengths in three bullet points');assert.equal(a.text.split('\n').filter(s=>s.startsWith('•')).length,3);assert.match(a.text,/Frontend architecture/);assert.doesNotMatch(a.text,/• Based on/);
+});
+test('strengths are derived from current data, not hardcoded assertions',()=>{
+ const changed=structuredClone(data);changed.experience=[];changed.projects={};assert.equal(localAnswer(changed,'What are his strengths?').topic,'unknown');
+});
+test('weaknesses are not guessed from positive evidence',()=>{
+ const a=ask('What are his weaknesses?');assert.equal(a.topic,'unknown');assert.match(a.text,/do not document weaknesses/);
+ const both=ask('What are his strengths and weaknesses?');assert.match(both.text,/Frontend architecture/);assert.match(both.text,/do not document weaknesses/);
+});
