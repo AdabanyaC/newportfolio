@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Octave Labs",
+    "file": "assets/octave-labs.png",
+    "source": "https://res.cloudinary.com/dbdgevqyn/image/upload/v1740617924/Screenshot_510_wxanvt.png"
+  },
+  {
+    "title": "Football O' Clock",
+    "file": "assets/football.png",
+    "source": "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662609/Screenshot_479.png"
+  },
+  {
+    "title": "Octave Finance",
+    "file": "assets/octave.png",
+    "source": "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726669975/Screenshot_481.png"
+  },
+  {
+    "title": "Election Monitoring App",
+    "file": "assets/election.png",
+    "source": "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726652184/Screenshot_477.png"
+  },
+  {
+    "title": "Nelson Iheagwam Ministries",
+    "file": "assets/ministries.png",
+    "source": "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662790/Screenshot_480.png"
+  },
+  {
+    "title": "Earthquake Data",
+    "file": "assets/earthquake.png",
+    "source": "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662789/10.a450e120.png"
+  },
+  {
+    "title": "Travel Website Landing Page",
+    "file": "assets/travel.png",
+    "source": "https://res.cloudinary.com/dbdgevqyn/image/upload/v1726662792/1.f2ca70fc.png"
+  },
+  {
+    "title": "Breed",
+    "file": "assets/breed.png",
+    "source": "/Users/clinton.adabanya/Desktop/clintoncodes/octave-labs/src/assets/breed/website-home.png"
+  },
+  {
+    "title": "Logg",
+    "file": "assets/logg.png",
+    "source": "/Users/clinton.adabanya/Desktop/clintoncodes/octave-labs/src/assets/logg/hero.png"
+  },
+  {
+    "title": "Landlord",
+    "file": "assets/landlord.webp",
+    "source": "/Users/clinton.adabanya/Desktop/clintoncodes/octave-labs/src/assets/landlord/home.webp"
+  },
+  {
+    "title": "Logg logo",
+    "file": "assets/logg-logo.svg",
+    "source": "https://uselogg.com/logoVariant.svg"
+  },
+  {
+    "title": "Breed logo",
+    "file": "assets/breed-logo.png",
+    "source": "breed-frontend/public/breed-app-icon.png"
+  },
+  {
+    "title": "Landlord logo",
+    "file": "assets/landlord-logo.png",
+    "source": "naijatycoon/apps/web/public/icons/icon-192.png"
+  },
+  {
+    "title": "Football O\u2019 Clock logo",
+    "file": "assets/football-logo.png",
+    "source": "footballoclock/src/assets/logo.png"
+  }
+]
