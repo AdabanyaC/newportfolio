@@ -106,3 +106,14 @@ test('weaknesses are not guessed from positive evidence',()=>{
  const a=ask('What are his weaknesses?');assert.equal(a.topic,'unknown');assert.match(a.text,/do not document weaknesses/);
  const both=ask('What are his strengths and weaknesses?');assert.match(both.text,/Frontend architecture/);assert.match(both.text,/do not document weaknesses/);
 });
+
+for(const q of ['How can I contact Clinton?','How do I contact you?','Contact Clinton','How can I contcat Clinton?','How can I contct Clinton?']) {
+ test(`contact intent survives typo correction: ${q}`,()=>{
+  for(const h of [[],history('Tell me about Emergent'),history('What are his strengths?')]){
+   const a=ask(q,h);assert.equal(a.topic,'contact');assert.match(a.text,/clintonadabanya@gmail\.com/);assert.doesNotMatch(a.text,/Jira|Delivered frontend/);assert.deepEqual(a.projectIds,[]);
+  }
+ });
+}
+test('contract work is not mistaken for a contact request',()=>{
+ const a=ask('Tell me about your contract role at Emergent');assert.equal(a.topic,'job:3');assert.match(a.text,/Frontend Developer/);
+});
