@@ -42,7 +42,7 @@ This is a bounded, retrieval-based guide, not a general-purpose language model. 
 
 `npm run check` validates JavaScript modules. `npm test` exercises the reported location regression, paraphrases and typos, current facts, project and employer follow-ups, context switches, multiple questions, unknown facts, source attribution, local-only behaviour, browser module serving, and endpoint safeguards.
 
-The composer supports Enter to send, Shift+Enter for a new line, Cmd/Ctrl+K focus, retry, and a new conversation. It uses the same engine tested in Node. 
+The composer supports Enter to send, Shift+Enter for a new line, Cmd/Ctrl+K focus, retry, and a new conversation. It uses the same engine tested in Node.
 
 ## Production deployment
 
