@@ -1,0 +1,386 @@
+{
+  "name": "Clinton Adabanya",
+  "role": "Software Developer \u00b7 Frontend & Mobile",
+  "location": "Birmingham, UK",
+  "email": "clintonadabanya@gmail.com",
+  "resumeUrl": "https://drive.google.com/file/d/1i-DxbbGJr4An8FpMEm3BtiFUr-3qxTPd/view?usp=sharing",
+  "summary": "Software Developer with over 5 years of experience building responsive web and mobile products with React, React Native, TypeScript, and Next.js. Currently building retail experiments at Good Growth and leading frontend architecture at Octave Infrastructure Labs.",
+  "featured": [
+    "breed",
+    "logg",
+    "landlord"
+  ],
+  "projectOrder": [
+    "breed",
+    "logg",
+    "landlord",
+    "football",
+    "octave",
+    "octave-labs",
+    "books",
+    "earthquake",
+    "election",
+    "ministries",
+    "travel"
+  ],
+  "projects": {
+    "octave": {
+      "title": "Octave Finance",
+      "category": "Fintech \u00b7 Web application",
+      "type": "finance",
+      "intro": "Bringing a financial product to life, one considered interaction at a time.",
+      "description": "Working closely with product designers and backend engineers, I developed responsive React interfaces for Octave Finance, connecting product designs to working API-driven experiences.",
+      "contribution": "Frontend component development, responsive interface implementation, API integration, and collaboration from product planning through deployment.",
+      "focus": "Translating design requirements into reusable components while keeping data flow, maintainability, and cross-device behaviour in view.",
+      "tags": [
+        "React",
+        "JavaScript",
+        "Redux",
+        "REST APIs",
+        "Payment integration"
+      ],
+      "url": "https://octave-app.vercel.app/",
+      "image": "assets/octave.png"
+    },
+    "football": {
+      "title": "Football O\u2019 Clock",
+      "category": "Sports \u00b7 Content platform",
+      "type": "football",
+      "intro": "A home for the game, its stories, and the people following it.",
+      "description": "A responsive football content platform built with React, Tailwind CSS, Redux Toolkit, and Contentful. Contentful powers the publishing workflow, news, updates, and dynamic content rendering.",
+      "contribution": "Built responsive frontend interfaces, integrated Contentful, and implemented dynamic content rendering and publishing workflows.",
+      "focus": "Organising changing sports content into a clear, responsive experience that makes information easy to explore.",
+      "tags": [
+        "React",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "Contentful"
+      ],
+      "url": "https://footballoclock.com/",
+      "image": "assets/football.png",
+      "logo": "assets/football-logo.png"
+    },
+    "books": {
+      "title": "Books, on the go",
+      "category": "Reading \u00b7 Mobile application",
+      "type": "books",
+      "intro": "Making space for a reading habit, wherever life takes you.",
+      "description": "A React Native books app for purchasing and reading books, discovering titles, and tracking reading goals. Built with Expo and a Strapi backend.",
+      "contribution": "Mobile interface development, backend integration, book search, release notifications, testing, and debugging.",
+      "focus": "Bringing discovery, reading, and personal progress together in a mobile experience.",
+      "tags": [
+        "React Native",
+        "Expo",
+        "JavaScript",
+        "Strapi",
+        "REST APIs"
+      ],
+      "url": "https://youtu.be/EovJngWt78k"
+    },
+    "earthquake": {
+      "title": "Earthquake Explorer",
+      "category": "Geospatial \u00b7 Data exploration",
+      "type": "earthquake",
+      "intro": "Turning earthquake data into an interface you can explore.",
+      "description": "An interactive earthquake data application built around the USGS API and React Leaflet, with sorting and filtering to help visitors explore the data.",
+      "contribution": "USGS API integration, interactive mapping with React Leaflet, and sorting and filtering functionality.",
+      "focus": "Making geographic data easier to understand through spatial context and simple discovery tools.",
+      "tags": [
+        "React",
+        "React Leaflet",
+        "USGS API",
+        "Tailwind CSS"
+      ],
+      "url": "https://earthquake-data.vercel.app/",
+      "image": "assets/earthquake.png"
+    },
+    "breed": {
+      "title": "Breed",
+      "category": "Product engineering \u00b7 Web & mobile",
+      "intro": "A consistent discipleship experience across web, iOS, and Android.",
+      "description": "A faith-based discipleship platform with devotionals, journals, community, and structured growth pathways. Built at Octave Infrastructure Labs.",
+      "contribution": "Led frontend architecture and shipped the Believer Dashboard, streaks, achievement badges, and Monthly Spiritual Health Report. Built the mobile app with React Native and Expo, porting core features from the web platform.",
+      "focus": "Cross-platform consistency, reusable interfaces, reliable REST integrations, and production readiness. Also owned email infrastructure with Zoho Mail and Brevo.",
+      "tags": [
+        "React",
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "REST APIs"
+      ],
+      "year": "Current studio product",
+      "type": "breed",
+      "image": "assets/breed.png",
+      "imageAlt": "Breed website \u2014 Grow in faith, walk in purpose",
+      "url": "https://joinbreed.com",
+      "logo": "assets/breed-logo.png"
+    },
+    "smartmatch": {
+      "title": "SmartMatch",
+      "category": "MSc project \u00b7 Recommendations",
+      "intro": "Matching people to opportunities beyond keywords.",
+      "description": "A smart job recommendation engine developed at Ulster University in 2026, using clustering and similarity-based unsupervised learning without labelled training data.",
+      "contribution": "Implemented data preprocessing, feature engineering, clustering, and similarity scoring. Evaluated model quality with clustering and similarity metrics, including silhouette scoring.",
+      "focus": "Improving recommendation relevance beyond keyword matching through experimentation and evaluation.",
+      "tags": [
+        "Machine learning",
+        "Clustering",
+        "Similarity scoring",
+        "Data preprocessing"
+      ],
+      "year": "2026",
+      "type": "smartmatch"
+    },
+    "instaclone": {
+      "title": "InstaClone",
+      "category": "Cloud-native \u00b7 Media platform",
+      "intro": "From upload to discovery, a complete media workflow.",
+      "description": "A cloud-native web application inspired by Instagram, developed April\u2013May 2025, with creator and consumer roles and video upload and discovery workflows.",
+      "contribution": "Built metadata-based uploads with title, caption, location, and people, plus viewing, searching, commenting, and rating. Deployed using Microsoft Azure, CosmosDB, and Blob Storage.",
+      "focus": "Connecting role-based workflows, media storage, and structured metadata into an end-to-end application.",
+      "tags": [
+        "Microsoft Azure",
+        "CosmosDB",
+        "Blob Storage",
+        "Media workflows"
+      ],
+      "year": "2025",
+      "type": "instaclone"
+    },
+    "octave-labs": {
+      "title": "Octave Labs",
+      "category": "Agency \u00b7 Website",
+      "image": "assets/octave-labs.png",
+      "intro": "A digital agency\u2019s identity, brought to the browser.",
+      "description": "A responsive and accessible digital agency website for Octave Labs.",
+      "contribution": "Translated Figma designs into React and Tailwind CSS interfaces.",
+      "focus": "Responsive layouts and faithful design implementation.",
+      "tags": [
+        "React",
+        "Tailwind CSS",
+        "Figma",
+        "JavaScript"
+      ],
+      "url": "https://octavelabs.co"
+    },
+    "election": {
+      "title": "Election Monitoring App",
+      "category": "Civic information \u00b7 Web application",
+      "intro": "Election information, made easier to explore.",
+      "description": "Built an application providing data, updates, and information on Nigerian presidential, gubernatorial, and senatorial elections.",
+      "contribution": "Built an application providing data, updates, and information on Nigerian presidential, gubernatorial, and senatorial elections.",
+      "focus": "Responsive interface implementation and clear content presentation.",
+      "tags": [
+        "React",
+        "Tailwind CSS",
+        "Contentful",
+        "Redux"
+      ],
+      "url": "https://election-monitoring-rho.vercel.app/",
+      "image": "assets/election.png"
+    },
+    "ministries": {
+      "title": "Nelson Iheagwam Ministries",
+      "category": "Community \u00b7 Website",
+      "intro": "Turning a ministry\u2019s designs into a working website.",
+      "description": "Built the ministry website as part of a team, translating Figma designs into functional React code and integrating a backend API for content.",
+      "contribution": "Built the ministry website as part of a team, translating Figma designs into functional React code and integrating a backend API for content.",
+      "focus": "Responsive interface implementation and clear content presentation.",
+      "tags": [
+        "React",
+        "Tailwind CSS",
+        "API integration",
+        "JavaScript"
+      ],
+      "url": "https://niministries.org/",
+      "image": "assets/ministries.png"
+    },
+    "travel": {
+      "title": "Travel Website",
+      "category": "Early work \u00b7 Landing page",
+      "intro": "An early exploration of responsive web design.",
+      "description": "A landing page for a hypothetical travel agency, created as a capstone for a real-world websites course in 2021.",
+      "contribution": "A landing page for a hypothetical travel agency, created as a capstone for a real-world websites course in 2021.",
+      "focus": "Responsive interface implementation and clear content presentation.",
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "Figma",
+        "GitHub"
+      ],
+      "url": "https://travel-website-opal.vercel.app/",
+      "image": "assets/travel.png"
+    },
+    "logg": {
+      "title": "Logg",
+      "category": "Relocation \u00b7 Digital platform",
+      "intro": "A clearer path to life in the UK.",
+      "description": "A guided relocation platform bringing pathway selection, onboarding, progress tracking, documents, and partner support into one connected experience.",
+      "contribution": "Spearheaded Logg at Octave Infrastructure Labs, contributing to product strategy, business planning, and branding.",
+      "focus": "Making complex journeys easier to follow through clear next steps, applicant dashboards, and organised partner support.",
+      "tags": [
+        "Product strategy",
+        "UI/UX design",
+        "Web development"
+      ],
+      "image": "assets/logg.png",
+      "imageAlt": "Logg relocation dashboard artwork with a graduation cap and UK location pin",
+      "url": "https://uselogg.com",
+      "sourceIndex": 3,
+      "logo": "assets/logg-logo.svg"
+    },
+    "landlord": {
+      "title": "Landlord",
+      "category": "Interactive product \u00b7 Browser game",
+      "intro": "Your city. Your people. Your next property empire.",
+      "description": "A city-based property game, formerly Naija Tycoon, with a 3D board, bot opponents, online play, and English and Pidgin language options.",
+      "contribution": "The project brings together game development, web development, and product design, spanning city selection, game setup, the 3D board, and property interactions.",
+      "focus": "Making buying, building, and collecting rent easy to follow, with readable controls and clear routes into solo or online play.",
+      "tags": [
+        "Game development",
+        "Web development",
+        "Product design",
+        "3D interfaces"
+      ],
+      "image": "assets/landlord.webp",
+      "imageAlt": "Landlord game homepage \u2014 Buy the city, build it up, bankrupt your friends",
+      "url": "https://playlandlord.app",
+      "sourceIndex": 4,
+      "logo": "assets/landlord-logo.png"
+    }
+  },
+  "experience": [
+    {
+      "company": "Good Growth",
+      "role": "Software Developer",
+      "location": "UK",
+      "dates": "May 2026 \u2014 Present",
+      "bullets": [
+        "Build A/B tests and personalisation experiences for enterprise retailers, including Tractor Supply Company and Wickes, using TypeScript and React on the GGT experimentation platform.",
+        "Engineered a multi-phase checkout upsell experiment with product-specific promotions, skeleton loading, gated upsell cards, and Payment section gating.",
+        "Developed resilient DOM injection patterns, CSS :has() rules, and self-healing placeholders to keep experiments stable through host-site re-renders.",
+        "Implement and audit analytics across Control and Challenger variants, resolve live experiment issues, and build DevTools QA snippets.",
+        "Built navigation experiments with event delegation and cookie-based audience gating."
+      ]
+    },
+    {
+      "company": "Octave Infrastructure Labs",
+      "role": "Co-Founder & Lead Frontend Engineer",
+      "location": "Remote",
+      "dates": "Nov 2022 \u2014 Present",
+      "bullets": [
+        "Co-founded a venture studio building its own products and delivering digital products for businesses and entrepreneurs.",
+        "Lead frontend architecture and a cross-functional team through task delegation, code reviews, sprint planning, and quality assurance.",
+        "Spearhead Breed across web and mobile, including the Believer Dashboard, streaks, achievement badges, and Monthly Spiritual Health Report.",
+        "Own Breed\u2019s Zoho Mail and Brevo email infrastructure, nurture sequences, and product campaigns.",
+        "Spearheaded Logg, a guided UK relocation platform, contributing to product strategy, business planning, and branding. Led SabiPlay\u2019s concept, design system, feasibility study, and brand identity.",
+        "Champion REST API integrations, React hooks, Context API, lazy loading, performance profiling, and AI-assisted development."
+      ]
+    },
+    {
+      "company": "Freelance",
+      "role": "React Native Developer",
+      "location": "Remote",
+      "dates": "Jun 2024 \u2014 Present",
+      "bullets": [
+        "Built the Breed mobile app with React Native and Expo, porting core web features to iOS and Android.",
+        "Implemented a bento-style Believer Dashboard, streak tracking, achievement badges, and modern native iOS design treatments within React Native.",
+        "Built a books marketplace app with discovery, integrated search, real-time notifications, and reading progress tracking.",
+        "Integrated Strapi and owned mobile delivery from feature build through systematic testing, debugging, and release."
+      ]
+    },
+    {
+      "company": "Emergent Infrastructure Labs",
+      "role": "Frontend Developer (Contract)",
+      "location": "Lagos State, Nigeria",
+      "dates": "Feb 2022 \u2014 Oct 2022",
+      "bullets": [
+        "Delivered frontend solutions with cross-functional teams using Jira and GitHub.",
+        "Optimised component library implementation and built reusable React components to reduce redundancy and improve consistency and performance."
+      ]
+    },
+    {
+      "company": "Boulos Enterprises Limited",
+      "role": "Software Engineer",
+      "location": "Lagos State, Nigeria",
+      "dates": "Jan 2021 \u2014 May 2022",
+      "bullets": [
+        "Led development of an e-commerce platform with responsive UI patterns and usability-focused improvements.",
+        "Improved application performance through debugging, refactoring, and efficient component rendering.",
+        "Integrated frontend components with backend services in collaboration with engineers."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MSc Computer Science",
+      "school": "Ulster University \u00b7 Birmingham, UK",
+      "date": "February 2026",
+      "result": "Distinction"
+    },
+    {
+      "degree": "BSc Computer Science",
+      "school": "Covenant University \u00b7 Ota, Nigeria",
+      "date": "December 2020",
+      "result": "CGPA 4.18 / 5.0"
+    }
+  ],
+  "skills": [
+    "React",
+    "Next.js",
+    "React Native",
+    "Expo",
+    "TypeScript",
+    "JavaScript",
+    "Tailwind CSS",
+    "Redux Toolkit",
+    "Context API",
+    "REST APIs",
+    "A/B testing",
+    "Analytics QA",
+    "DOM manipulation",
+    "Node.js",
+    "Express.js",
+    "Strapi",
+    "Contentful",
+    "MongoDB",
+    "MySQL",
+    "Git",
+    "GitHub",
+    "Jira",
+    "Bitbucket",
+    "Vercel",
+    "Netlify",
+    "Brevo",
+    "Claude Code"
+  ],
+  "volunteering": "GetStarted in Tech \u2014 Community Instructor / Mentor, November 2021. Mentored 10+ aspiring frontend developers in HTML, CSS, Git/GitHub, and Figma-to-code implementation.",
+  "interests": [
+    "Football",
+    "FIFA",
+    "Music",
+    "Books on theology"
+  ],
+  "sources": [
+    {
+      "label": "Updated r\u00e9sum\u00e9",
+      "url": "https://drive.google.com/file/d/1i-DxbbGJr4An8FpMEm3BtiFUr-3qxTPd/view?usp=sharing"
+    },
+    {
+      "label": "Original portfolio",
+      "url": "https://www.clintonadabanya.dev/"
+    },
+    {
+      "label": "Breed project",
+      "url": "https://joinbreed.com"
+    },
+    {
+      "label": "Logg project",
+      "url": "https://uselogg.com"
+    },
+    {
+      "label": "Landlord project",
+      "url": "https://playlandlord.app"
+    }
+  ]
+}
