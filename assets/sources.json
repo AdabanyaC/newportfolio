@@ -68,5 +68,11 @@
     "title": "Football O\u2019 Clock logo",
     "file": "assets/football-logo.png",
     "source": "footballoclock/src/assets/logo.png"
+  },
+  {
+    "title": "Foureen",
+    "file": "assets/foureen.jpg",
+    "source": "https://www.foureen.com/",
+    "note": "Actual homepage captured on 2026-11-23; sidebar logo from Foureen app/icon.svg."
   }
 ]

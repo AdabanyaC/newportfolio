@@ -117,3 +117,9 @@ for(const q of ['How can I contact Clinton?','How do I contact you?','Contact Cl
 test('contract work is not mistaken for a contact request',()=>{
  const a=ask('Tell me about your contract role at Emergent');assert.equal(a.topic,'job:3');assert.match(a.text,/Frontend Developer/);
 });
+
+test('Foureen is discoverable and answers project and stack follow-ups',()=>{
+ const answer=ask('Tell me about Foureen');assert.equal(answer.topic,'project:foureen');assert.match(answer.text,/Nigeria/);assert.ok(answer.sources.some(s=>s.url==='https://www.foureen.com/'));
+ const followup=ask('What technologies does it use?',history('Tell me about Foureen'));assert.match(followup.text,/Next\.js/);assert.match(followup.text,/TypeScript/);
+ assert.ok(ask('Show me your recent projects').projectIds.includes('foureen'));
+});
